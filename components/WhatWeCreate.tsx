@@ -2,45 +2,36 @@
 
 import { useEffect, useRef } from 'react'
 
-const cards = [
+const services = [
   {
-    id: 'merchandise',
-    title: 'Branded Merchandise',
-    description:
-      'Apparel, welcome kits, swag programs, and promotional products your team and customers actually want to keep.',
+    num: '01',
+    name: 'Branded\nMerchandise',
+    desc: 'Apparel, drinkware, bags, notebooks, and promotional products — curated and branded to represent your company well.',
     icon: (
-      <svg width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden="true">
-        <path d="M19 9 L8 15 L12 21 L16 18.5 L16 44 L36 44 L36 18.5 L40 21 L44 15 L33 9 C31.5 13 29 15 26 15 C23 15 20.5 13 19 9Z" stroke="#1E9BD7" strokeWidth="1.75" strokeLinejoin="round"/>
-        <path d="M19 9 C20.5 13 23 15 26 15 C29 15 31.5 13 33 9" stroke="#1E9BD7" strokeWidth="1.75" strokeLinecap="round"/>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H7v10a2 2 0 002 2h6a2 2 0 002-2V10h3.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/>
       </svg>
     ),
   },
   {
-    id: 'environments',
-    title: 'Branded Environments',
-    description:
-      'Office signage, display systems, showroom setups, and event presence that makes your space feel like your brand.',
+    num: '02',
+    name: 'Displays &\nSignage',
+    desc: 'Portable displays, signage systems, and branded environments for offices, events, and anywhere your brand needs to show up.',
     icon: (
-      <svg width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden="true">
-        <rect x="6" y="20" width="40" height="26" rx="2" stroke="#1E9BD7" strokeWidth="1.75"/>
-        <path d="M6 29h40" stroke="#1E9BD7" strokeWidth="1.25" strokeOpacity="0.45"/>
-        <path d="M26 6 L46 20 L6 20 Z" stroke="#1E9BD7" strokeWidth="1.75" strokeLinejoin="round"/>
-        <rect x="20" y="34" width="12" height="12" rx="1" stroke="#1E9BD7" strokeWidth="1.5" strokeOpacity="0.7"/>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <rect x="2" y="3" width="4" height="18"/>
+        <rect x="10" y="7" width="4" height="14"/>
+        <rect x="18" y="11" width="4" height="10"/>
       </svg>
     ),
   },
   {
-    id: 'materials',
-    title: 'Sales Materials',
-    description:
-      'Presentation folders, sales kits, leave-behinds, and sample packaging that helps your team close deals.',
+    num: '03',
+    name: 'Branded\nKits',
+    desc: 'Curated bundles for onboarding, gifting, and company moments — designed to land well and feel intentional every time.',
     icon: (
-      <svg width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden="true">
-        <path d="M9 11 L9 43 L43 43 L43 19 L33 11 Z" stroke="#1E9BD7" strokeWidth="1.75" strokeLinejoin="round"/>
-        <path d="M33 11 L33 19 L43 19" stroke="#1E9BD7" strokeWidth="1.75" strokeLinejoin="round"/>
-        <line x1="16" y1="25" x2="36" y2="25" stroke="#1E9BD7" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.5"/>
-        <line x1="16" y1="31" x2="36" y2="31" stroke="#1E9BD7" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.5"/>
-        <line x1="16" y1="37" x2="27" y2="37" stroke="#1E9BD7" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.5"/>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
       </svg>
     ),
   },
@@ -54,57 +45,77 @@ export default function WhatWeCreate() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'))
+            entry.target.querySelectorAll('.fade-up').forEach((el, i) => {
+              setTimeout(() => el.classList.add('visible'), i * 80)
+            })
           }
         })
       },
-      { threshold: 0.08 }
+      { threshold: 0.06 }
     )
     if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
   }, [])
 
   return (
-    <section id="services" ref={sectionRef} className="bg-white py-32">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
-        <div className="mb-16">
-          <p className="reveal text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">
-            What we create
-          </p>
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-            <h2 className="reveal reveal-delay-1 font-display font-bold text-brand-black leading-tight tracking-tight" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
-              Brand presence across<br />every touchpoint.
-            </h2>
+    <section id="services" ref={sectionRef} className="bg-white py-[120px] px-20">
+      {/* Header */}
+      <div className="fade-up grid gap-20 items-end mb-[72px]" style={{ gridTemplateColumns: '1fr 1fr' }}>
+        <div>
+          <div className="flex items-center gap-2.5 mb-5">
+            <div className="w-6 h-px bg-brand-blue flex-shrink-0" />
+            <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-brand-blue">What We Do</span>
           </div>
+          <h2
+            className="font-serif font-light text-brand-black"
+            style={{ fontSize: 'clamp(40px, 5vw, 68px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
+          >
+            Everything your<br />brand <em className="not-italic text-brand-blue">needs</em> to<br />show up.
+          </h2>
         </div>
+        <p className="text-brand-mid" style={{ fontSize: '18px', fontWeight: 300, lineHeight: 1.75, maxWidth: '480px' }}>
+          From merchandise your team actually uses to displays that make a statement — we handle sourcing, production, and delivery so you don't have to manage it.
+        </p>
+      </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {cards.map((card, i) => (
-            <a
-              key={card.id}
-              href="#quote"
-              className={`reveal reveal-delay-${i + 1} group flex flex-col rounded-sm border border-zinc-100 bg-[#F9FAFB] hover:border-brand-blue/25 hover:shadow-[0_8px_40px_rgba(30,155,215,0.09)] transition-all duration-300 p-8`}
-            >
-              <div className="mb-7 w-16 h-16 rounded-sm bg-white border border-zinc-100 flex items-center justify-center group-hover:border-brand-blue/20 transition-colors duration-300">
-                {card.icon}
+      {/* Cards */}
+      <div className="grid grid-cols-3 gap-6">
+        {services.map((s, i) => (
+          <a
+            key={s.num}
+            href="#contact"
+            className="fade-up group relative flex flex-col gap-6 bg-brand-gray border border-brand-border no-underline overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(30,155,215,0.15)] hover:border-brand-blue/40"
+            style={{ padding: '48px 40px', transitionDelay: `${i * 60}ms` }}
+          >
+            {/* Blue corner accent on hover */}
+            <div className="absolute top-0 right-0 w-20 h-20 transition-all duration-300 opacity-0 group-hover:opacity-100"
+              style={{ background: 'linear-gradient(225deg, rgba(30,155,215,0.12) 0%, transparent 70%)' }}
+              aria-hidden="true"
+            />
+
+            <div className="flex items-center justify-between">
+              <div className="w-12 h-12 border border-brand-border bg-white flex items-center justify-center text-brand-mid transition-all duration-300 group-hover:border-brand-blue group-hover:bg-brand-blue group-hover:text-white group-hover:shadow-[0_4px_16px_rgba(30,155,215,0.3)]">
+                {s.icon}
               </div>
-              <h3 className="font-display text-xl font-bold text-brand-black mb-3 tracking-tight">
-                {card.title}
-              </h3>
-              <p className="text-brand-mid text-sm leading-relaxed flex-1">
-                {card.description}
-              </p>
-              <div className="mt-7 flex items-center gap-1.5 text-brand-blue text-sm font-medium">
-                Get started
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">
-                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </a>
-          ))}
-        </div>
+              <span className="font-serif text-[13px] font-normal tracking-[0.1em] text-brand-light transition-colors duration-300 group-hover:text-brand-blue">{s.num}</span>
+            </div>
+
+            <div className="font-serif text-[30px] font-medium text-brand-black leading-[1.15] whitespace-pre-line transition-colors duration-300 group-hover:text-brand-blue">
+              {s.name}
+            </div>
+
+            <p className="text-brand-mid flex-1" style={{ fontSize: '16px', fontWeight: 300, lineHeight: 1.75 }}>
+              {s.desc}
+            </p>
+
+            <div className="flex items-center gap-2 text-[12px] font-semibold tracking-[0.08em] uppercase text-brand-blue transition-all duration-300 translate-y-1 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+              Get a quote
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
+                <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
   )

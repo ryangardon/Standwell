@@ -4,39 +4,19 @@ import { useEffect, useRef } from 'react'
 
 const steps = [
   {
-    number: '01',
+    index: '01',
     title: 'Tell us what you need',
-    body: "Fill out the form with your goals and timeline. We'll get back to you within 24 hours with questions or a recommendation.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <rect x="3" y="5" width="22" height="18" rx="2" stroke="white" strokeWidth="1.75"/>
-        <path d="M8 10h12M8 14h8M8 18h5" stroke="white" strokeWidth="1.75" strokeLinecap="round"/>
-      </svg>
-    ),
+    desc: "Fill out the quote form with your goals, timeline, and budget. We'll get back to you within 24 hours with a recommendation or follow-up questions.",
   },
   {
-    number: '02',
+    index: '02',
     title: 'We handle the details',
-    body: "We source the right products, coordinate design and production, and keep you updated. No project management on your end.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="10" stroke="white" strokeWidth="1.75"/>
-        <path d="M10 14l3 3 5-5" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
+    desc: 'We source the right products, coordinate production and artwork, and keep you updated at each stage. No vendor chasing, no guesswork.',
   },
   {
-    number: '03',
-    title: 'It shows up ready to go',
-    body: "Everything ships directly to you or your team — inspected, packed, and ready to use.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M3 18h17M20 18V10H16L20 18ZM20 18H24L27 22H20V18Z" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="7.5" cy="23" r="2" stroke="white" strokeWidth="1.75"/>
-        <circle cx="17" cy="23" r="2" stroke="white" strokeWidth="1.75"/>
-        <path d="M3 10H16V18" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
+    index: '03',
+    title: 'It arrives ready to go',
+    desc: 'Everything ships directly to you or your team — inspected and ready to use. Typical delivery in 2–4 weeks from order confirmation.',
   },
 ]
 
@@ -48,7 +28,7 @@ export default function HowItWorks() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'))
+            entry.target.querySelectorAll('.fade-up').forEach((el) => el.classList.add('visible'))
           }
         })
       },
@@ -59,55 +39,71 @@ export default function HowItWorks() {
   }, [])
 
   return (
-    <section id="how-it-works" ref={sectionRef} className="bg-[#F9FAFB] py-32">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-16">
-          <p className="reveal text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">
-            How it works
-          </p>
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-            <h2 className="reveal reveal-delay-1 font-display font-bold text-brand-black leading-tight tracking-tight" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
-              From first conversation<br />to delivered — typically 2–4 weeks.
-            </h2>
+    <section id="process" ref={sectionRef} className="bg-brand-black text-white py-[120px] px-20 relative overflow-hidden">
+      {/* Subtle blue glow top-left */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: '-100px', left: '-100px',
+          width: '500px', height: '500px',
+          background: 'radial-gradient(circle, rgba(30,155,215,0.1) 0%, transparent 70%)',
+          borderRadius: '50%',
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Header */}
+      <div className="fade-up grid gap-20 items-end mb-20 relative z-10" style={{ gridTemplateColumns: '1fr 1fr' }}>
+        <div>
+          <div className="flex items-center gap-2.5 mb-5">
+            <div className="w-6 h-px bg-brand-blue flex-shrink-0" />
+            <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-brand-blue">How It Works</span>
           </div>
-        </div>
-
-        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {/* Connector line */}
-          <div
-            className="hidden md:block absolute top-7 left-[calc(16.66%+28px)] right-[calc(16.66%+28px)] h-px bg-zinc-200"
-            aria-hidden="true"
-          />
-
-          {steps.map((step, i) => (
-            <div key={step.number} className={`reveal reveal-delay-${i + 1} relative`}>
-              <div className="flex items-center gap-4 mb-7">
-                <div className="w-14 h-14 rounded-sm bg-brand-blue flex items-center justify-center flex-shrink-0 relative z-10 shadow-[0_4px_20px_rgba(30,155,215,0.3)]">
-                  {step.icon}
-                </div>
-                <span className="font-display text-xs font-bold text-zinc-300 tracking-widest">
-                  STEP {step.number}
-                </span>
-              </div>
-              <h3 className="font-display text-xl font-bold text-brand-black mb-3 tracking-tight">
-                {step.title}
-              </h3>
-              <p className="text-brand-mid text-base leading-relaxed">{step.body}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="reveal mt-16 pt-14 border-t border-zinc-200">
-          <a
-            href="#quote"
-            className="inline-flex items-center gap-2 bg-brand-black hover:bg-zinc-800 text-white font-semibold text-base px-8 py-4 rounded-sm transition-all duration-200 hover:shadow-lg"
+          <h2
+            className="font-serif font-light text-white"
+            style={{ fontSize: 'clamp(40px, 5vw, 68px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
           >
-            Get Started
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
+            From first conversation<br />to <em className="not-italic text-brand-blue">delivered.</em>
+          </h2>
         </div>
+        <p className="text-white/50" style={{ fontSize: '18px', fontWeight: 300, lineHeight: 1.75, maxWidth: '480px' }}>
+          We keep it simple. Tell us what you need, we handle everything from there — no project management required on your end.
+        </p>
+      </div>
+
+      {/* Steps */}
+      <div className="fade-up relative z-10 grid grid-cols-3 gap-6">
+        {steps.map((step, i) => (
+          <div
+            key={step.index}
+            className="group relative flex flex-col gap-6 border border-white/10 bg-white/[0.03] transition-all duration-300 hover:bg-white/[0.07] hover:border-brand-blue/40 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(30,155,215,0.1)]"
+            style={{ padding: '48px 40px' }}
+          >
+            {/* Ghost number */}
+            <span
+              className="font-serif absolute top-5 right-6 select-none pointer-events-none transition-opacity duration-300 group-hover:opacity-0"
+              style={{ fontSize: '72px', fontWeight: 300, color: 'rgba(255,255,255,0.05)', lineHeight: 1 }}
+              aria-hidden="true"
+            >
+              {step.index}
+            </span>
+
+            {/* Top accent line on hover */}
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-brand-blue scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+
+            {/* Index badge */}
+            <div className="w-9 h-9 bg-brand-blue flex items-center justify-center text-white text-sm font-semibold tracking-wide flex-shrink-0 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(30,155,215,0.5)] group-hover:scale-110">
+              {step.index}
+            </div>
+
+            <div className="font-serif text-[28px] font-medium text-white leading-[1.2] transition-colors duration-300 group-hover:text-brand-blue">
+              {step.title}
+            </div>
+            <p style={{ fontSize: '16px', fontWeight: 300, color: 'rgba(255,255,255,0.5)', lineHeight: 1.75 }}>
+              {step.desc}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   )

@@ -16,7 +16,7 @@ export default function QuoteForm() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'))
+            entry.target.querySelectorAll('.fade-up').forEach((el) => el.classList.add('visible'))
           }
         })
       },
@@ -36,15 +36,17 @@ export default function QuoteForm() {
 
     try {
       if (!FORMSPREE_ID) {
-        const name = data.get('name') as string
+        const firstName = data.get('firstName') as string
+        const lastName = data.get('lastName') as string
         const email = data.get('email') as string
+        const company = data.get('company') as string
         const product = data.get('product') as string
         const details = data.get('details') as string
         const subject = encodeURIComponent(`New inquiry — ${product}`)
         const body = encodeURIComponent(
-          `Name: ${name}\nEmail: ${email}\nService: ${product}\n\nMessage:\n${details}`
+          `Name: ${firstName} ${lastName}\nEmail: ${email}\nCompany: ${company}\nService: ${product}\n\nMessage:\n${details}`
         )
-        window.location.href = `mailto:hello@standwelldisplays.com?subject=${subject}&body=${body}`
+        window.location.href = `mailto:sales@standwelldisplays.com?subject=${subject}&body=${body}`
         setState('success')
         return
       }
@@ -65,177 +67,171 @@ export default function QuoteForm() {
     } catch (err) {
       setState('error')
       setErrorMsg(
-        err instanceof Error
-          ? err.message
-          : 'Something went wrong. Please email us directly.'
+        err instanceof Error ? err.message : 'Something went wrong. Please email us directly.'
       )
     }
   }
 
+  const inputClass =
+    'w-full px-[18px] py-[14px] text-[15px] font-light text-white outline-none transition-colors duration-200 border focus:border-white/50'
+  const inputStyle = {
+    background: 'rgba(255,255,255,0.08)',
+    borderColor: 'rgba(255,255,255,0.15)',
+    fontFamily: 'inherit',
+    WebkitAppearance: 'none' as const,
+  }
+
   return (
-    <section id="quote" ref={sectionRef} className="bg-[#F9FAFB] py-32 border-t border-zinc-200">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+    <section id="contact" ref={sectionRef} className="bg-brand-blue py-[120px] px-20">
+      <div className="grid gap-20 items-center" style={{ gridTemplateColumns: '1fr 1fr' }}>
 
-          {/* Left — copy */}
-          <div className="lg:sticky lg:top-32">
-            <p className="reveal text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">
-              Get started
-            </p>
-            <h2 className="reveal reveal-delay-1 font-display font-bold text-brand-black leading-tight tracking-tight mb-6" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
-              Let's talk about<br />your brand.
-            </h2>
-            <p className="reveal reveal-delay-2 text-brand-mid text-lg leading-relaxed mb-10">
-              Tell us what you're working on. We'll get back to you within 24 hours with a recommendation.
-            </p>
+        {/* Left */}
+        <div className="fade-up">
+          <div className="flex items-center gap-2.5 mb-5">
+            <div className="w-6 h-px flex-shrink-0" style={{ background: 'rgba(255,255,255,0.3)' }} />
+            <span className="text-[11px] font-medium tracking-[0.14em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              Get Started
+            </span>
+          </div>
+          <h2
+            className="font-serif font-light text-white mb-5"
+            style={{ fontSize: 'clamp(40px, 5vw, 68px)', lineHeight: 1.05 }}
+          >
+            Let's talk about<br />your <em className="not-italic" style={{ opacity: 0.7 }}>next project.</em>
+          </h2>
+          <p style={{ fontSize: '18px', fontWeight: 300, color: 'rgba(255,255,255,0.6)', lineHeight: 1.75 }}>
+            Tell us what you're working on. We'll get back to you within 24 hours with a recommendation — no commitment required.
+          </p>
 
-            <div className="reveal reveal-delay-3 space-y-5">
-              {[
-                { icon: '↩', label: 'Response within 24 hours' },
-                { icon: '→', label: 'Typical delivery in 2–4 weeks' },
-                { icon: '◎', label: 'No commitment to inquire' },
-              ].map((item) => (
-                <div key={item.label} className="flex items-center gap-3">
-                  <span className="text-brand-blue text-base w-4 text-center">{item.icon}</span>
-                  <span className="text-brand-mid text-sm">{item.label}</span>
-                </div>
-              ))}
+          <div className="mt-10 flex flex-col gap-3">
+            {[
+              'Response within 24 hours',
+              'Typical delivery in 2–4 weeks',
+              'No commitment to inquire',
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-3">
+                <div className="w-5 h-px flex-shrink-0" style={{ background: 'rgba(255,255,255,0.3)' }} />
+                <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)' }}>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right — Form */}
+        <div className="fade-up">
+          {state === 'success' ? (
+            <div className="flex flex-col gap-4 p-10 border" style={{ background: 'rgba(255,255,255,0.08)', borderColor: 'rgba(255,255,255,0.15)' }}>
+              <div className="w-8 h-8 bg-white/20 flex items-center justify-center">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M2 8l4.5 4.5L14 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <h3 className="font-serif text-2xl font-medium text-white">You're all set.</h3>
+              <p style={{ fontSize: '14px', fontWeight: 300, color: 'rgba(255,255,255,0.6)', lineHeight: 1.75 }}>
+                We got your message and will be in touch within 24 hours.
+              </p>
+              <button
+                onClick={() => setState('idle')}
+                className="text-white/60 text-sm font-medium hover:text-white transition-colors mt-2"
+              >
+                Send another message
+              </button>
             </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4" noValidate>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="flex flex-col gap-2">
+                  <label className="text-[11px] font-medium tracking-[0.1em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                    First Name
+                  </label>
+                  <input name="firstName" type="text" placeholder="Alex" required className={inputClass} style={inputStyle} />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-[11px] font-medium tracking-[0.1em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                    Last Name
+                  </label>
+                  <input name="lastName" type="text" placeholder="Rivera" required className={inputClass} style={inputStyle} />
+                </div>
+              </div>
 
-            <div className="reveal reveal-delay-4 mt-10 pt-8 border-t border-zinc-200">
-              <p className="text-sm text-brand-mid">
-                Prefer email?{' '}
-                <a
-                  href="mailto:hello@standwelldisplays.com"
-                  className="text-brand-blue hover:underline underline-offset-4"
+              <div className="flex flex-col gap-2">
+                <label className="text-[11px] font-medium tracking-[0.1em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  Work Email
+                </label>
+                <input name="email" type="email" placeholder="alex@company.com" required className={inputClass} style={inputStyle} />
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label className="text-[11px] font-medium tracking-[0.1em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  Company
+                </label>
+                <input name="company" type="text" placeholder="Acme Inc." className={inputClass} style={inputStyle} />
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label className="text-[11px] font-medium tracking-[0.1em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  What do you need?
+                </label>
+                <select
+                  name="product"
+                  required
+                  className={inputClass}
+                  style={{ ...inputStyle, backgroundImage: `url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6L8 10L12 6' stroke='rgba(255,255,255,0.5)' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 16px center' }}
                 >
-                  hello@standwelldisplays.com
+                  <option value="" disabled>Select a category</option>
+                  <option value="Branded Merchandise" style={{ background: '#1E9BD7' }}>Branded Merchandise</option>
+                  <option value="Displays & Signage" style={{ background: '#1E9BD7' }}>Displays &amp; Signage</option>
+                  <option value="Branded Kits" style={{ background: '#1E9BD7' }}>Branded Kits</option>
+                  <option value="All of the above" style={{ background: '#1E9BD7' }}>All of the above</option>
+                  <option value="Not sure yet" style={{ background: '#1E9BD7' }}>Not sure yet</option>
+                </select>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label className="text-[11px] font-medium tracking-[0.1em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  Tell us more
+                </label>
+                <textarea
+                  name="details"
+                  rows={4}
+                  placeholder="What are you working on? Any timeline or budget in mind?"
+                  className={inputClass + ' resize-none'}
+                  style={inputStyle}
+                />
+              </div>
+
+              {state === 'error' && (
+                <p className="text-white/80 text-sm bg-white/10 border border-white/20 px-4 py-3">
+                  {errorMsg || 'Something went wrong. Please try again or email us directly.'}
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={state === 'submitting'}
+                className="self-start bg-white text-brand-blue text-[13px] font-medium tracking-[0.08em] uppercase px-10 py-[18px] transition-all duration-200 hover:bg-brand-blue-light disabled:opacity-60 hover:-translate-y-px flex items-center gap-2"
+              >
+                {state === 'submitting' ? (
+                  <>
+                    <svg className="animate-spin" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                      <circle cx="7" cy="7" r="5" stroke="currentColor" strokeWidth="2" strokeOpacity="0.3"/>
+                      <path d="M7 2a5 5 0 0 1 5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  'Send Inquiry'
+                )}
+              </button>
+
+              <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)' }}>
+                Or email us directly at{' '}
+                <a href="mailto:sales@standwelldisplays.com" style={{ color: 'rgba(255,255,255,0.5)' }} className="hover:text-white transition-colors">
+                  sales@standwelldisplays.com
                 </a>
               </p>
-            </div>
-          </div>
-
-          {/* Right — form */}
-          <div className="reveal reveal-delay-2">
-            {state === 'success' ? (
-              <div className="flex flex-col items-start gap-4 p-10 bg-white border border-zinc-100 rounded-sm shadow-sm">
-                <div className="p-3 bg-brand-blue/10 rounded-full">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M5 12L9.5 16.5L19 7" stroke="#1E9BD7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3 className="font-display text-2xl font-bold text-brand-black">
-                  You're all set.
-                </h3>
-                <p className="text-brand-mid leading-relaxed">
-                  We got your message and will be in touch within 24 hours.
-                </p>
-                <button
-                  onClick={() => setState('idle')}
-                  className="mt-2 text-brand-blue text-sm font-medium hover:underline underline-offset-4"
-                >
-                  Send another message
-                </button>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="bg-white border border-zinc-100 rounded-sm shadow-sm p-8 sm:p-10 space-y-6"
-                noValidate
-              >
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-brand-black mb-1.5">
-                    Name <span className="text-brand-blue">*</span>
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    autoComplete="name"
-                    placeholder="Alex Johnson"
-                    className="w-full bg-white border border-zinc-200 rounded-sm px-4 py-3 text-sm text-brand-black placeholder:text-zinc-400 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-brand-black mb-1.5">
-                    Email <span className="text-brand-blue">*</span>
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    autoComplete="email"
-                    placeholder="alex@yourcompany.com"
-                    className="w-full bg-white border border-zinc-200 rounded-sm px-4 py-3 text-sm text-brand-black placeholder:text-zinc-400 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="product" className="block text-sm font-semibold text-brand-black mb-1.5">
-                    What do you need? <span className="text-brand-blue">*</span>
-                  </label>
-                  <select
-                    id="product"
-                    name="product"
-                    required
-                    className="w-full bg-white border border-zinc-200 rounded-sm px-4 py-3 text-sm text-brand-black focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors appearance-none"
-                    style={{
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6L8 10L12 6' stroke='%236B7280' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round'/%3E%3C/svg%3E")`,
-                      backgroundRepeat: 'no-repeat',
-                      backgroundPosition: 'right 16px center',
-                    }}
-                  >
-                    <option value="">Select...</option>
-                    <option value="Branded Merchandise">Branded Merchandise</option>
-                    <option value="Branded Environments">Branded Environments</option>
-                    <option value="Sales Materials">Sales Materials</option>
-                    <option value="All of the above">All of the above</option>
-                    <option value="Not sure yet">Not sure yet</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="details" className="block text-sm font-semibold text-brand-black mb-1.5">
-                    Message
-                  </label>
-                  <textarea
-                    id="details"
-                    name="details"
-                    rows={5}
-                    placeholder="Tell us about your company, goals, timeline, and budget — whatever you know."
-                    className="w-full bg-white border border-zinc-200 rounded-sm px-4 py-3 text-sm text-brand-black placeholder:text-zinc-400 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors resize-none"
-                  />
-                </div>
-
-                {state === 'error' && (
-                  <p className="text-red-600 text-sm bg-red-50 border border-red-100 rounded-sm px-4 py-3">
-                    {errorMsg || 'Something went wrong. Please try again or email us directly.'}
-                  </p>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={state === 'submitting'}
-                  className="w-full bg-brand-black hover:bg-zinc-800 disabled:opacity-60 text-white font-semibold text-base py-4 rounded-sm transition-all duration-200 hover:shadow-lg flex items-center justify-center gap-2"
-                >
-                  {state === 'submitting' ? (
-                    <>
-                      <svg className="animate-spin" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                        <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="2" strokeOpacity="0.3"/>
-                        <path d="M8 2a6 6 0 0 1 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                      </svg>
-                      Sending...
-                    </>
-                  ) : (
-                    'Get Started'
-                  )}
-                </button>
-              </form>
-            )}
-          </div>
+            </form>
+          )}
         </div>
       </div>
     </section>

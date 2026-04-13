@@ -1,85 +1,270 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 export default function Hero() {
-  const headlineRef = useRef<HTMLHeadingElement>(null)
-  const subRef = useRef<HTMLParagraphElement>(null)
-  const ctaRef = useRef<HTMLDivElement>(null)
+  const orbRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const elements = [headlineRef, subRef, ctaRef]
-    elements.forEach((ref, i) => {
-      if (!ref.current) return
-      ref.current.style.opacity = '0'
-      ref.current.style.transform = 'translateY(24px)'
-      setTimeout(() => {
-        if (!ref.current) return
-        ref.current.style.transition = 'opacity 0.8s ease, transform 0.8s ease'
-        ref.current.style.opacity = '1'
-        ref.current.style.transform = 'translateY(0)'
-      }, 120 + i * 140)
-    })
+    const handleMove = (e: MouseEvent) => {
+      if (!orbRef.current) return
+      const x = (e.clientX / window.innerWidth - 0.5) * 24
+      const y = (e.clientY / window.innerHeight - 0.5) * 16
+      orbRef.current.style.transform = `translate(${x}px, ${y}px)`
+    }
+    window.addEventListener('mousemove', handleMove)
+    return () => window.removeEventListener('mousemove', handleMove)
   }, [])
 
   return (
-    <section className="relative bg-brand-black min-h-screen flex items-center overflow-hidden">
-      {/* Gradient background */}
+    <section className="min-h-screen pt-[108px] bg-[#F9FAFB] flex items-center overflow-hidden relative">
+
+      {/* Dot grid */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background:
-            'radial-gradient(ellipse 80% 70% at 15% 50%, rgba(30,155,215,0.13) 0%, transparent 65%), radial-gradient(ellipse 50% 50% at 85% 20%, rgba(30,155,215,0.06) 0%, transparent 60%)',
+          backgroundImage: 'radial-gradient(circle, rgba(30,155,215,0.18) 1px, transparent 1px)',
+          backgroundSize: '36px 36px',
+          maskImage: 'radial-gradient(ellipse 60% 80% at 15% 50%, black 0%, transparent 75%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 60% 80% at 15% 50%, black 0%, transparent 75%)',
+          opacity: 0.45,
         }}
         aria-hidden="true"
       />
 
-      {/* Subtle grid lines */}
+      {/* Parallax blue glow — left */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        ref={orbRef}
+        className="absolute pointer-events-none"
         style={{
-          backgroundImage:
-            'linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)',
-          backgroundSize: '72px 72px',
+          top: '5%', left: '-10%',
+          width: '480px', height: '480px',
+          background: 'radial-gradient(circle, rgba(30,155,215,0.08) 0%, transparent 70%)',
+          borderRadius: '50%',
+          transition: 'transform 0.2s ease-out',
         }}
         aria-hidden="true"
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-40 w-full">
-        {/* Eyebrow */}
-        <p className="inline-flex items-center gap-2 text-brand-blue text-sm font-medium tracking-widest uppercase mb-8">
-          <span className="block w-6 h-px bg-brand-blue" />
-          Brand Presentation Consultancy
-        </p>
+      {/* Blue ambient glow behind card stack */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: '15%', right: '2%',
+          width: '560px', height: '560px',
+          background: 'radial-gradient(circle, rgba(30,155,215,0.09) 0%, transparent 65%)',
+          borderRadius: '50%',
+          filter: 'blur(48px)',
+        }}
+        aria-hidden="true"
+      />
 
-        <h1
-          ref={headlineRef}
-          className="font-display font-bold text-white leading-[1.02] tracking-tight mb-8"
-          style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
-        >
-          Your brand presentation<br />partners.
-        </h1>
+      <div
+        className="relative z-10 w-full px-20 py-20 grid items-center"
+        style={{ gridTemplateColumns: '1fr 1fr', gap: '48px' }}
+      >
+        {/* LEFT — copy */}
+        <div>
+          <div className="flex items-center gap-3 mb-10">
+            <div className="w-8 h-px bg-brand-blue flex-shrink-0" />
+            <span className="text-sm font-semibold tracking-[0.14em] uppercase text-brand-blue">
+              Branded Products &amp; Merchandise
+            </span>
+          </div>
 
-        <p
-          ref={subRef}
-          className="text-white/55 text-xl sm:text-2xl leading-relaxed max-w-2xl mb-12"
-        >
-          We help growing companies show up professionally — through merchandise, environments, and sales materials that actually represent who you are.
-        </p>
-
-        <div ref={ctaRef} className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
-          <a
-            href="#quote"
-            className="inline-flex items-center gap-2 bg-brand-blue hover:bg-[#1889c0] text-white font-semibold text-base px-9 py-5 rounded-sm transition-all duration-200 hover:shadow-[0_0_36px_rgba(30,155,215,0.4)]"
+          <h1
+            className="font-serif font-light text-brand-black mb-8"
+            style={{ fontSize: 'clamp(52px, 5.5vw, 88px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
           >
-            Get Started
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-          <span className="text-white/35 text-sm">We respond within 24 hours.</span>
+            Branded products<br />for <em className="not-italic text-brand-blue">growing</em><br />companies.
+          </h1>
+
+          <p className="text-brand-mid mb-14 max-w-lg" style={{ fontSize: '20px', fontWeight: 300, lineHeight: 1.75 }}>
+            One partner for everything your team and brand needs — merchandise, displays, and custom products. Sourced, coordinated, and delivered.
+          </p>
+
+          <div className="flex items-center gap-8">
+            <a
+              href="#contact"
+              className="group bg-brand-blue text-white font-semibold tracking-[0.08em] uppercase px-10 py-5 text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(30,155,215,0.4)] inline-flex items-center gap-3"
+            >
+              Get a Quote
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
+                <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+            <a
+              href="#services"
+              className="text-brand-mid text-base hover:text-brand-blue transition-colors duration-200 flex items-center gap-2 group"
+            >
+              See what we do
+              <span className="transition-transform duration-200 group-hover:translate-x-1.5">→</span>
+            </a>
+          </div>
+        </div>
+
+        {/* RIGHT — stacked card composition */}
+        <div className="flex justify-center items-center relative">
+          {/* Dot grid — full right side */}
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              top: '-10%', left: '-5%', right: '-10%', bottom: '-10%',
+              backgroundImage: 'radial-gradient(circle, rgba(30,155,215,0.35) 2px, transparent 2px)',
+              backgroundSize: '32px 32px',
+              maskImage: 'radial-gradient(ellipse 90% 85% at 60% 50%, black 40%, transparent 100%)',
+              WebkitMaskImage: 'radial-gradient(ellipse 90% 85% at 60% 50%, black 40%, transparent 100%)',
+            }}
+            aria-hidden="true"
+          />
+
+          {/* Extra wrapper adds padding so unstacked cards don't clip */}
+          <div style={{ padding: '40px 140px 120px 20px' }}>
+            <div className="hero-stack">
+              {/* Card 4 — bottom */}
+              <div className="hero-card hero-card-4">
+                <Image
+                  src="/hero3.png"
+                  alt=""
+                  fill
+                  className="object-cover object-center"
+                  sizes="480px"
+                />
+              </div>
+              {/* Card 3 */}
+              <div className="hero-card hero-card-3">
+                <Image
+                  src="/hero2.png"
+                  alt=""
+                  fill
+                  className="object-cover object-center"
+                  sizes="480px"
+                />
+              </div>
+              {/* Card 2 */}
+              <div className="hero-card hero-card-2">
+                <Image
+                  src="/hero.png"
+                  alt=""
+                  fill
+                  className="object-cover object-center"
+                  sizes="480px"
+                />
+              </div>
+              {/* Card 1 — top / dominant */}
+              <div className="hero-card hero-card-1">
+                <Image
+                  src="/hero0.png"
+                  alt="Standwell branded kit"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                  sizes="480px"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        .hero-stack {
+          position: relative;
+          width: 480px;
+          height: 600px;
+          overflow: visible;
+        }
+
+        .hero-card {
+          position: absolute;
+          inset: 0;
+          border-radius: 32px;
+          overflow: hidden;
+          background: #fff;
+          border: 1px solid rgba(10,10,10,0.06);
+          transition:
+            transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+            box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1);
+          will-change: transform;
+        }
+
+        /* Default stacked state */
+        .hero-card-1 {
+          z-index: 3;
+          transform: translate(0px, 0px) scale(1);
+          box-shadow:
+            0 28px 70px rgba(10,10,10,0.12),
+            0 10px 24px rgba(10,10,10,0.08),
+            0 0 0 1.5px rgba(30,155,215,0.5),
+            0 0 24px 4px rgba(30,155,215,0.3),
+            0 0 56px 12px rgba(30,155,215,0.15);
+        }
+
+        .hero-card-2 {
+          z-index: 2;
+          transform: translate(48px, 40px) scale(0.975);
+          box-shadow:
+            0 18px 44px rgba(10,10,10,0.09),
+            0 5px 14px rgba(10,10,10,0.05),
+            0 0 0 1px rgba(30,155,215,0.25),
+            0 0 16px 3px rgba(30,155,215,0.12);
+        }
+
+        .hero-card-3 {
+          z-index: 2;
+          transform: translate(96px, 80px) scale(0.95);
+          box-shadow:
+            0 12px 30px rgba(10,10,10,0.07),
+            0 3px 8px rgba(10,10,10,0.04),
+            0 0 0 1px rgba(30,155,215,0.15),
+            0 0 10px 2px rgba(30,155,215,0.08);
+        }
+
+        .hero-card-4 {
+          z-index: 1;
+          transform: translate(144px, 120px) scale(0.925);
+          box-shadow:
+            0 8px 20px rgba(10,10,10,0.06),
+            0 2px 6px rgba(10,10,10,0.03),
+            0 0 0 1px rgba(30,155,215,0.1),
+            0 0 8px 1px rgba(30,155,215,0.06);
+        }
+
+        /* Hover unstack */
+        .hero-stack:hover .hero-card-1 {
+          transform: translate(-36px, -16px) scale(1);
+          box-shadow:
+            0 40px 96px rgba(10,10,10,0.16),
+            0 0 0 1.5px rgba(30,155,215,0.7),
+            0 0 32px 8px rgba(30,155,215,0.4),
+            0 0 72px 20px rgba(30,155,215,0.2);
+        }
+
+        .hero-stack:hover .hero-card-2 {
+          transform: translate(110px, 88px) scale(0.975);
+          box-shadow:
+            0 22px 52px rgba(10,10,10,0.10),
+            0 0 0 1px rgba(30,155,215,0.3),
+            0 0 20px 4px rgba(30,155,215,0.15);
+        }
+
+        .hero-stack:hover .hero-card-3 {
+          transform: translate(110px, 88px) scale(0.95);
+          box-shadow:
+            0 14px 36px rgba(10,10,10,0.08),
+            0 0 0 1px rgba(30,155,215,0.2),
+            0 0 12px 2px rgba(30,155,215,0.1);
+        }
+
+        .hero-stack:hover .hero-card-4 {
+          transform: translate(210px, 164px) scale(0.925);
+          box-shadow:
+            0 10px 24px rgba(10,10,10,0.06),
+            0 0 0 1px rgba(30,155,215,0.15),
+            0 0 8px 2px rgba(30,155,215,0.08);
+        }
+      `}</style>
     </section>
   )
 }

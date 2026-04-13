@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Standwell — Branded Products for Growing Companies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* CORRECTED: Standwell brand blue instead of green */
+      --brand-blue: #1E9BD7;
+      --brand-blue-mid: #1889C0;
+      --brand-blue-light: #E8F4FA;
+      --cream: #F9FAFB;
+      --warm-white: #FFFFFF;
+      --ink: #0A0A0A;
+      --ink-mid: #6B7280;
+      --ink-light: #9CA3AF;
+      --accent: #1E9BD7;
+      --accent-light: #E8F4FA;
+      --border: #E5E7EB;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--warm-white);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 72px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .nav-logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--brand-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-logo-mark svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: white;
+      stroke-width: 1.5;
+    }
+
+    .nav-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo-text .stand { color: var(--brand-blue); }
+    .nav-logo-text .well { color: var(--ink); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink-mid);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--brand-blue); }
+
+    .nav-cta {
+      background: var(--brand-blue) !important;
+      color: white !important;
+      padding: 10px 22px;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.06em !important;
+      text-transform: uppercase;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--brand-blue-mid) !important; color: white !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      padding-top: 72px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 64px 80px 80px;
+      background: var(--warm-white);
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .hero-eyebrow-line {
+      width: 32px;
+      height: 1px;
+      background: var(--brand-blue);
+    }
+
+    .hero-eyebrow span {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 5vw, 72px);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--brand-blue);
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.7;
+      max-width: 420px;
+      margin-bottom: 48px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .btn-primary {
+      background: var(--brand-blue);
+      color: white;
+      padding: 16px 36px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--brand-blue-mid); transform: translateY(-1px); }
+
+    .btn-ghost {
+      color: var(--ink-mid);
+      font-size: 14px;
+      font-weight: 400;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+
+    .btn-ghost:hover { color: var(--brand-blue); }
+
+    .btn-ghost::after {
+      content: '→';
+      transition: transform 0.2s;
+    }
+
+    .btn-ghost:hover::after { transform: translateX(4px); }
+
+    .hero-right {
+      background: var(--brand-blue);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-right-inner {
+      position: relative;
+      z-index: 2;
+      padding: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .hero-stat-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 28px 32px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-stat-card:nth-child(2) { animation-delay: 0.1s; margin-left: 32px; }
+    .hero-stat-card:nth-child(3) { animation-delay: 0.2s; }
+
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 300;
+      color: white;
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-align: right;
+      max-width: 120px;
+    }
+
+    .hero-right-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 70%, rgba(255,255,255,0.04) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 50%);
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-section {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      padding: 18px 0;
+      background: var(--cream);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      animation: marquee 28s linear infinite;
+      width: max-content;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 0 40px;
+      white-space: nowrap;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    .marquee-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--brand-blue);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 120px 80px; }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .section-eyebrow-line {
+      width: 24px;
+      height: 1px;
+      background: var(--brand-blue);
+    }
+
+    .section-eyebrow span {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .section-title em { font-style: italic; color: var(--brand-blue); }
+
+    .section-sub {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.75;
+      max-width: 480px;
+    }
+
+    /* ── WHAT WE DO ── */
+    .services-section {
+      background: var(--warm-white);
+      padding-bottom: 80px;
+    }
+
+    .services-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 72px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .service-card {
+      background: var(--warm-white);
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: background 0.25s;
+      cursor: default;
+    }
+
+    .service-card:hover { background: var(--brand-blue-light); }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.25s, background 0.25s;
+    }
+
+    .service-card:hover .service-icon {
+      border-color: var(--brand-blue);
+      background: var(--brand-blue);
+    }
+
+    .service-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--ink-mid);
+      fill: none;
+      stroke-width: 1.5;
+      transition: stroke 0.25s;
+    }
+
+    .service-card:hover .service-icon svg { stroke: white; }
+
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--ink-light);
+    }
+
+    .service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.75;
+    }
+
+    .service-link {
+      margin-top: auto;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .service-card:hover .service-link { opacity: 1; }
+
+    /* ── HOW IT WORKS ── */
+    .process-section {
+      background: var(--ink);
+      color: white;
+    }
+
+    .process-section .section-title { color: white; }
+    .process-section .section-sub { color: rgba(255,255,255,0.5); }
+    .process-section .section-eyebrow span { color: var(--brand-blue); }
+    .process-section .section-eyebrow-line { background: var(--brand-blue); }
+
+    .process-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 80px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .process-step {
+      background: var(--ink);
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+      transition: background 0.25s;
+    }
+
+    .process-step:hover { background: rgba(255,255,255,0.03); }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.06);
+      line-height: 1;
+      position: absolute;
+      top: 24px;
+      right: 28px;
+    }
+
+    .step-index {
+      width: 32px;
+      height: 32px;
+      background: var(--brand-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 500;
+      color: white;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: white;
+      line-height: 1.2;
+    }
+
+    .step-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.75;
+    }
+
+    /* ── WHY STANDWELL ── */
+    .why-section {
+      background: var(--cream);
+    }
+
+    .why-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .why-left { position: sticky; top: 120px; }
+
+    .why-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .why-item {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .why-item-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ink-light);
+      padding-top: 4px;
+    }
+
+    .why-item-content {}
+
+    .why-item-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .why-item-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.75;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-section {
+      background: var(--warm-white);
+      padding: 80px;
+      border-top: 1px solid var(--border);
+    }
+
+    .trust-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .trust-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .trust-stat {
+      background: var(--warm-white);
+      padding: 40px 32px;
+      text-align: center;
+    }
+
+    .trust-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--brand-blue);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .trust-stat-label {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.5;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--brand-blue);
+      padding: 120px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .cta-left .section-eyebrow span { color: rgba(255,255,255,0.5); }
+    .cta-left .section-eyebrow-line { background: rgba(255,255,255,0.3); }
+
+    .cta-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 4vw, 58px);
+      font-weight: 300;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .cta-title em { font-style: italic; opacity: 0.7; }
+
+    .cta-sub {
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+    }
+
+    .cta-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-field label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+      padding: 14px 18px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+      -webkit-appearance: none;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .form-field select option { background: var(--brand-blue); color: white; }
+
+    .form-field textarea { resize: vertical; min-height: 100px; }
+
+    .form-submit {
+      background: white;
+      color: var(--brand-blue);
+      border: none;
+      padding: 18px 40px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      align-self: flex-start;
+    }
+
+    .form-submit:hover {
+      background: var(--brand-blue-light);
+      transform: translateY(-1px);
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      margin-top: -4px;
+    }
+
+    .form-note a { color: rgba(255,255,255,0.5); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 64px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .footer-brand {}
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      text-decoration: none;
+    }
+
+    .footer-logo-mark {
+      width: 30px;
+      height: 30px;
+      background: var(--brand-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-logo-mark svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: white;
+      stroke-width: 1.5;
+    }
+
+    .footer-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: white;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-tagline {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.65;
+      max-width: 220px;
+    }
+
+    .footer-col-title {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      background: var(--ink);
+      padding: 24px 80px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .footer-email {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-email:hover { color: white; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 60px 32px; }
+      .hero-right { min-height: 400px; }
+      .hero-right-inner { padding: 40px 32px; }
+
+      section { padding: 80px 32px; }
+
+      .services-header { grid-template-columns: 1fr; gap: 32px; }
+      .services-grid { grid-template-columns: 1fr; }
+
+      .process-header { grid-template-columns: 1fr; gap: 32px; }
+      .process-steps { grid-template-columns: 1fr; }
+
+      .why-layout { grid-template-columns: 1fr; gap: 48px; }
+      .why-left { position: static; }
+
+      .trust-section { padding: 60px 32px; }
+      .trust-stats { grid-template-columns: repeat(2, 1fr); }
+
+      .cta-section { grid-template-columns: 1fr; gap: 48px; padding: 80px 32px; }
+      .form-row { grid-template-columns: 1fr; }
+
+      footer { grid-template-columns: 1fr; gap: 40px; padding: 48px 32px; }
+      .footer-bottom { padding: 20px 32px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="12"/><rect x="9" y="5" width="5" height="9"/></svg>
+      </div>
+      <span class="nav-logo-text"><span class="stand">Stand</span><span class="well">well</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">What We Do</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#why">Why Standwell</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0;">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span>Branded Products &amp; Merchandise</span>
+      </div>
+      <h1>Branded products<br>for <em>growing</em><br>companies.</h1>
+      <p class="hero-sub">One partner for everything your team and brand needs — merchandise, displays, and custom products. Sourced, coordinated, and delivered.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get a Quote</a>
+        <a href="#services" class="btn-ghost">See what we do</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-right-bg"></div>
+      <div class="hero-right-inner">
+        <div class="hero-stat-card">
+          <div class="hero-stat-num">24h</div>
+          <div class="hero-stat-label">Response on every inquiry</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-num">2–4<span style="font-size:28px">wk</span></div>
+          <div class="hero-stat-label">Typical delivery timeline</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-num">1</div>
+          <div class="hero-stat-label">Vendor for every branded need</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-item"><div class="marquee-dot"></div>Branded Merchandise</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Displays &amp; Signage</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Custom Apparel</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Company Kits</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Promotional Products</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Branded Environments</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Drinkware &amp; Bags</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Custom Products</div>
+      <!-- duplicate for seamless loop -->
+      <div class="marquee-item"><div class="marquee-dot"></div>Branded Merchandise</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Displays &amp; Signage</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Custom Apparel</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Company Kits</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Promotional Products</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Branded Environments</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Drinkware &amp; Bags</div>
+      <div class="marquee-item"><div class="marquee-dot"></div>Custom Products</div>
+    </div>
+  </div>
+
+  <!-- WHAT WE DO -->
+  <section id="services" class="services-section">
+    <div class="services-header fade-up">
+      <div>
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>What We Do</span>
+        </div>
+        <h2 class="section-title">Everything your<br>brand <em>needs</em> to<br>show up.</h2>
+      </div>
+      <p class="section-sub">From merchandise your team actually uses to displays that make a statement — we handle sourcing, production, and delivery so you don't have to manage it.</p>
+    </div>
+    <div class="services-grid fade-up">
+      <div class="service-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H7v10a2 2 0 002 2h6a2 2 0 002-2V10h3.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/></svg>
+          </div>
+          <span class="service-num">01</span>
+        </div>
+        <div class="service-name">Branded<br>Merchandise</div>
+        <p class="service-desc">Apparel, drinkware, bags, notebooks, and promotional products — curated and branded to represent your company well.</p>
+        <a href="#contact" class="service-link">Get a quote →</a>
+      </div>
+      <div class="service-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="4" height="18"/><rect x="10" y="7" width="4" height="14"/><rect x="18" y="11" width="4" height="10"/></svg>
+          </div>
+          <span class="service-num">02</span>
+        </div>
+        <div class="service-name">Displays &amp;<br>Signage</div>
+        <p class="service-desc">Portable displays, signage systems, and branded environments for offices, events, and anywhere your brand needs to show up.</p>
+        <a href="#contact" class="service-link">Get a quote →</a>
+      </div>
+      <div class="service-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          </div>
+          <span class="service-num">03</span>
+        </div>
+        <div class="service-name">Branded<br>Kits</div>
+        <p class="service-desc">Curated bundles for onboarding, gifting, and company moments — designed to land well and feel intentional every time.</p>
+        <a href="#contact" class="service-link">Get a quote →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="process" class="process-section">
+    <div class="process-header fade-up">
+      <div>
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>How It Works</span>
+        </div>
+        <h2 class="section-title" style="color:white;">From first conversation<br>to <em>delivered.</em></h2>
+      </div>
+      <p class="section-sub">We keep it simple. Tell us what you need, we handle everything from there — no project management required on your end.</p>
+    </div>
+    <div class="process-steps fade-up">
+      <div class="process-step">
+        <span class="step-num">01</span>
+        <div class="step-index">01</div>
+        <div class="step-title">Tell us what you need</div>
+        <p class="step-desc">Fill out the quote form with your goals, timeline, and budget. We'll get back to you within 24 hours with a recommendation or follow-up questions.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">02</span>
+        <div class="step-index">02</div>
+        <div class="step-title">We handle the details</div>
+        <p class="step-desc">We source the right products, coordinate production and artwork, and keep you updated at each stage. No vendor chasing, no guesswork.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">03</span>
+        <div class="step-index">03</div>
+        <div class="step-title">It arrives ready to go</div>
+        <p class="step-desc">Everything ships directly to you or your team — inspected and ready to use. Typical delivery in 2–4 weeks from order confirmation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY STANDWELL -->
+  <section id="why" class="why-section">
+    <div class="why-layout">
+      <div class="why-left fade-up">
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>Why Standwell</span>
+        </div>
+        <h2 class="section-title">A different kind<br>of <em>brand partner.</em></h2>
+        <p class="section-sub" style="margin-top:16px;">Most vendors send you a catalog. We tell you what to order, make sure it's right, and get it there on time.</p>
+      </div>
+      <div class="why-list fade-up">
+        <div class="why-item">
+          <span class="why-item-num">01</span>
+          <div class="why-item-content">
+            <div class="why-item-title">We tell you what to order</div>
+            <p class="why-item-desc">No 500,000-item catalog to wade through. We recommend the right products for your goals, timeline, and budget — and explain why.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-item-num">02</span>
+          <div class="why-item-content">
+            <div class="why-item-title">One vendor for everything</div>
+            <p class="why-item-desc">Merchandise, displays, kits — all in one place. Stop managing multiple suppliers, timelines, and invoices for a single project.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-item-num">03</span>
+          <div class="why-item-content">
+            <div class="why-item-title">Right-sized for growing teams</div>
+            <p class="why-item-desc">No agency overhead or enterprise minimums. We work with companies of 10 to 500 — and treat every order like it matters.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-item-num">04</span>
+          <div class="why-item-content">
+            <div class="why-item-title">Real people, real replies</div>
+            <p class="why-item-desc">Every inquiry gets a response within 24 hours from a real person — not an automated quote form or a customer service queue.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STATS -->
+  <div class="trust-section fade-up">
+    <p class="trust-label">What you can expect</p>
+    <div class="trust-stats">
+      <div class="trust-stat">
+        <div class="trust-stat-num">24h</div>
+        <div class="trust-stat-label">Response on every inquiry</div>
+      </div>
+      <div class="trust-stat">
+        <div class="trust-stat-num">2–4<span style="font-size:28px;font-family:'Cormorant Garamond',serif">wk</span></div>
+        <div class="trust-stat-label">Typical delivery from order</div>
+      </div>
+      <div class="trust-stat">
+        <div class="trust-stat-num">1</div>
+        <div class="trust-stat-label">Point of contact for everything</div>
+      </div>
+      <div class="trust-stat">
+        <div class="trust-stat-num">0</div>
+        <div class="trust-stat-label">Commitment to inquire</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA / CONTACT -->
+  <section id="contact" class="cta-section">
+    <div class="cta-left fade-up">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Get Started</span>
+      </div>
+      <h2 class="cta-title">Let's talk about<br>your <em>next project.</em></h2>
+      <p class="cta-sub">Tell us what you're working on. We'll get back to you within 24 hours with a recommendation — no commitment required.</p>
+      <div style="margin-top:40px;display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:20px;height:1px;background:rgba(255,255,255,0.3);"></div>
+          <span style="font-size:13px;color:rgba(255,255,255,0.5);">Response within 24 hours</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:20px;height:1px;background:rgba(255,255,255,0.3);"></div>
+          <span style="font-size:13px;color:rgba(255,255,255,0.5);">Typical delivery in 2–4 weeks</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:20px;height:1px;background:rgba(255,255,255,0.3);"></div>
+          <span style="font-size:13px;color:rgba(255,255,255,0.5);">No commitment to inquire</span>
+        </div>
+      </div>
+    </div>
+    <div class="cta-form fade-up">
+      <div class="form-row">
+        <div class="form-field">
+          <label>First Name</label>
+          <input type="text" placeholder="Alex" />
+        </div>
+        <div class="form-field">
+          <label>Last Name</label>
+          <input type="text" placeholder="Rivera" />
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Work Email</label>
+        <input type="email" placeholder="alex@company.com" />
+      </div>
+      <div class="form-field">
+        <label>Company</label>
+        <input type="text" placeholder="Acme Inc." />
+      </div>
+      <div class="form-field">
+        <label>What do you need?</label>
+        <select>
+          <option value="" disabled selected>Select a category</option>
+          <option>Branded Merchandise</option>
+          <option>Displays &amp; Signage</option>
+          <option>Branded Kits</option>
+          <option>All of the above</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Tell us more</label>
+        <textarea placeholder="What are you working on? Any timeline or budget in mind?"></textarea>
+      </div>
+      <button class="form-submit">Send Inquiry</button>
+      <p class="form-note">Or email us directly at <a href="mailto:hello@standwelldisplays.com">hello@standwelldisplays.com</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <a href="#" class="footer-logo">
+        <div class="footer-logo-mark">
+          <svg viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="12"/><rect x="9" y="5" width="5" height="9"/></svg>
+        </div>
+        <span class="footer-logo-text">Standwell</span>
+      </a>
+      <p class="footer-tagline">Branded products and merchandise for growing companies.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigate</p>
+      <ul class="footer-links">
+        <li><a href="#services">What We Do</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#why">Why Standwell</a></li>
+        <li><a href="#contact">Get a Quote</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@standwelldisplays.com">hello@standwelldisplays.com</a></li>
+        <li><a href="#contact">Request a Quote</a></li>
+      </ul>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Standwell. All rights reserved.</span>
+    <a href="mailto:hello@standwelldisplays.com" class="footer-email">hello@standwelldisplays.com</a>
+  </div>
+
+  <!-- Scroll animation observer -->
+  <script>
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

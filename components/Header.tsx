@@ -7,59 +7,60 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-brand-black/95 backdrop-blur-md border-b border-white/10 py-4'
-          : 'bg-transparent py-6'
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-300 ${
+        scrolled ? 'h-[88px] shadow-md border-b border-brand-border' : 'h-[108px] border-b border-brand-border'
       }`}
+      style={{ background: 'rgba(255,255,255,0.97)', backdropFilter: 'blur(16px)' }}
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo — icon (inverted to white) + wordmark in CSS */}
-        <a href="#" className="flex items-center gap-2.5" aria-label="Standwell home">
+      <div className="w-full px-12 flex items-center justify-between">
+        {/* Logo — icon + full wordmark, large */}
+        <a href="#" className="flex items-center group" aria-label="Standwell home">
           <Image
-            src="/logo-icon.png"
-            alt=""
-            width={28}
-            height={28}
-            className="w-7 h-7 object-contain"
-            style={{ filter: 'brightness(0) invert(1)' }}
+            src="/logo.png"
+            alt="StandWell"
+            width={200}
+            height={200}
+            className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-20' : 'h-24'}`}
             priority
           />
-          <span className="font-display text-xl font-bold tracking-tight leading-none">
-            <span className="text-brand-blue">Stand</span>
-            <span className="text-white">Well</span>
-          </span>
         </a>
 
-        {/* CTA */}
-        <a
-          href="#quote"
-          className="inline-flex items-center gap-2 bg-brand-blue hover:bg-[#1889c0] text-white text-sm font-medium px-5 py-2.5 rounded-sm transition-colors duration-200"
-        >
-          Get a Quote
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M2 7h10M8 3l4 4-4 4"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </a>
+        {/* Nav */}
+        <ul className="hidden md:flex items-center gap-10 list-none m-0 p-0">
+          {[
+            { label: 'What We Do', href: '#services' },
+            { label: 'How It Works', href: '#process' },
+            { label: 'Why Standwell', href: '#why' },
+          ].map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                className="relative text-brand-black text-[15px] font-medium tracking-wide hover:text-brand-blue transition-colors duration-200 no-underline group"
+              >
+                {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-blue transition-all duration-300 group-hover:w-full rounded-full" />
+              </a>
+            </li>
+          ))}
+          <li>
+            <a
+              href="#contact"
+              className="bg-brand-blue hover:bg-brand-blue-mid text-white text-sm font-semibold tracking-[0.06em] uppercase px-7 py-3.5 transition-all duration-200 no-underline inline-flex items-center gap-2.5 group hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(30,155,215,0.35)]"
+            >
+              Get a Quote
+              <svg width="13" height="13" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">
+                <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
       </div>
     </header>
   )

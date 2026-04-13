@@ -10,18 +10,24 @@ const config: Config = {
       colors: {
         brand: {
           blue: '#1E9BD7',
+          'blue-mid': '#1889C0',
+          'blue-light': '#E8F4FA',
           black: '#0A0A0A',
           gray: '#F9FAFB',
           mid: '#6B7280',
+          light: '#9CA3AF',
+          border: '#E5E7EB',
         },
       },
       fontFamily: {
         display: ['var(--font-display)', 'sans-serif'],
         body: ['var(--font-body)', 'sans-serif'],
+        serif: ['var(--font-serif)', 'serif'],
       },
       animation: {
         'fade-up': 'fadeUp 0.6s ease forwards',
         'fade-in': 'fadeIn 0.6s ease forwards',
+        'marquee': 'marquee 28s linear infinite',
       },
       keyframes: {
         fadeUp: {
@@ -31,6 +37,10 @@ const config: Config = {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },
