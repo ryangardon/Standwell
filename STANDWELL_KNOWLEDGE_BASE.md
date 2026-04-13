@@ -8,15 +8,14 @@
 
 ## Brand Overview
 
-**Standwell** is a portable trade show display brokerage. We source professional-grade displays from wholesale partners and sell to businesses that want a simple, fast buying experience without the complexity of full-service exhibit houses.
+**Standwell** is a brand presentation consultancy for growing companies. We help businesses show up professionally at every touchpoint — from the merchandise your team wears, to the environments where you meet customers, to the materials that represent your brand in the field.
 
-**Tagline Options:**
-- "Show Up. Stand Out."
-- "Simple Displays. Real Results."
+**Tagline:**
+"Your brand, everywhere it matters."
 
-**Brand Voice:** Warm, direct, no-BS. Knowledgeable friend in the industry, not corporate sales pitch. Honest about what's needed vs. what's overkill.
+**Brand Voice:** Warm, direct, no-BS. A knowledgeable partner who understands brand presentation — not a corporate sales pitch or an overwhelming product catalog. Honest about what's needed vs. what's overkill.
 
-**Brand Promise:** We make getting trade show displays simple, affordable, and stress-free. You tell us your show, your budget, and your goals — we handle the rest.
+**Brand Promise:** We make professional brand presentation simple and accessible. You tell us where your brand needs to show up, your budget, and your goals — we handle the rest.
 
 ---
 
@@ -24,150 +23,156 @@
 
 ### The Core Definition
 
-> Companies or teams that need professional portable displays under $5K, want a simple buying process, and don't need (or want) a full-service exhibit partner.
+> Companies that want cohesive, professional brand presence across merchandise, environments, and materials — without managing multiple vendors or overpaying agencies.
 
-**Unifying Trait:** Transactional intent — they want to buy, receive, and move on. Not looking for an ongoing relationship, custom fabrication, or complex logistics.
+**Unifying Trait:** They care about how their brand shows up but don't have the time, expertise, or desire to manage it themselves. They want a trusted partner who "gets it" and just handles it.
 
 ### Target Segments
 
 | Segment | Description | Buying Trigger |
 |---------|-------------|----------------|
-| **First-Time Exhibitors** | New to trade shows, need guidance | First show registration, uncertainty about what to buy |
-| **Occasional Exhibitors** | 1-3 shows per year, no dedicated exhibit budget | Upcoming regional show, don't want full-service relationship |
-| **SMBs with Rotating Shows** | Regular exhibitors who buy transactionally | Need replacement graphics, new banners for different events |
-| **Corporate / Internal Events** | Not trade shows — sales kickoffs, lobbies, recruiting | Need professional branded displays for internal use |
-| **Franchise / Multi-Location** | Consistent branding across locations | New location opening, brand refresh, standardization |
-| **Scaling Startups** | Outgrew DIY, need professional upgrade | Graduated from Vistaprint, need to look legit |
+| **HR / People Teams** | Building culture through branded experiences | New hire onboarding, swag programs, recognition gifts, culture initiatives |
+| **Marketing Teams** | Need branded materials for campaigns and events | Product launches, brand refreshes, event presence, campaign merchandise |
+| **Sales / Revenue Teams** | Professional materials for field teams | Sales kits, client gifts, presentation tools, leave-behinds |
+| **Office / Facilities** | Physical brand presence in workspaces | New office setup, rebrand, investor visits, showroom updates |
+| **Founders / Ops** | "Make us look legit" across the board | Scaling up, first big hire push, fundraising, market expansion |
+| **Franchise / Multi-Location** | Consistent branding across locations | New location opening, brand standardization, refresh cycles |
 
 ### Firmographics
 
-- **Company Size:** 1-100 employees (sweet spot: 5-30)
-- **Revenue:** $500K - $25M annual
-- **Industries:** SaaS, DTC brands, professional services, local manufacturing, health & wellness, food & beverage, franchises, real estate, recruiting
-- **Budget Range:** $500 - $5,000 per order (sweet spot: $1,500 - $3,500)
-- **Timeline:** Typically 2-6 weeks before need date
+- **Company Size:** 10-200 employees (sweet spot: 20-75)
+- **Revenue:** $1M - $50M annual
+- **Industries:** SaaS, DTC brands, professional services, health & wellness, food & beverage, franchises, real estate, recruiting, fintech, biotech
+- **Budget Range:** $500 - $10,000 per project (sweet spot: $2,000 - $5,000)
+- **Timeline:** Typically 2-4 weeks, sometimes faster for merchandise
 
 ### Buyer Persona
 
-**Role:** Marketing Manager, Office Manager, Founder/CEO, Events Coordinator, Franchise Owner
+**Role:** Marketing Manager, People/HR Lead, Office Manager, Founder/CEO, Head of Sales, Brand Manager
 
-**Mindset:** "I need something professional but I don't have time to become a trade show expert. Just tell me what to get."
+**Mindset:** "I need our brand to look professional and consistent, but I don't have time to become an expert in all this stuff. Just tell me what we need and make it happen."
 
 **Pain Points:**
-- Overwhelmed by options online
-- Worried about looking unprofessional
-- Unclear on what's actually needed vs. nice-to-have
+- Juggling multiple vendors for different brand needs
+- Overwhelmed by options (thousands of promo products, endless signage options)
+- Worried about inconsistent brand presentation
 - Limited budget, needs to justify spend
-- Concerned about logistics (shipping, setup)
+- No time to project manage merchandise and materials
 
 **What They Want:**
-- Someone to recommend exactly what they need
-- Simple package at a clear price
-- Confidence they won't look amateur
-- Easy setup they can do themselves
-- Fast turnaround
+- One partner who handles brand presentation holistically
+- Curated recommendations, not overwhelming catalogs
+- Confidence that everything will look cohesive and professional
+- Simple process with clear pricing
+- Fast turnaround without sacrificing quality
 
 ---
 
-## Product Focus
+## Service Categories
 
-### Core Products (In Scope)
+### 1. Branded Merchandise & Swag
 
-| Product | Use Case | Price Range |
-|---------|----------|-------------|
-| Retractable Banner Stands | Entry point, add-ons, lobby signage | $150 - $400 each |
-| Table Top Displays | 6ft or 8ft tables, minimal space | $200 - $600 |
-| Table Throws/Covers | Branded table covering | $150 - $350 |
-| Pop-Up Displays | 8ft or 10ft backwall | $800 - $2,000 |
-| Tension Fabric Displays | Modern look, 10x10 booths | $1,200 - $3,500 |
-| 10x10 Booth Kits | Complete solution: backwall + counter + banner | $2,000 - $5,000 |
-| Outdoor Displays | Tents, flags, A-frames | $200 - $1,500 |
-| Counters/Podiums | Portable counters with graphic wraps | $300 - $800 |
+Curated promotional products and apparel — not random junk from a 500,000-item catalog.
 
-### Intentionally Out of Scope
+| Product Type | Use Cases | Price Range |
+|--------------|-----------|-------------|
+| Branded Apparel | Team wear, client gifts, event giveaways | $25 - $150/piece |
+| Welcome Kits | New hire onboarding, client welcome packages | $50 - $300/kit |
+| Promotional Products | Event swag, campaign giveaways, appreciation gifts | $5 - $100/piece |
+| Premium Gifts | Executive gifts, client appreciation, milestones | $100 - $500/piece |
+| Custom Merchandise | Unique branded items, custom manufacturing | $500 - $5,000+ |
 
-- Custom fabrication or island booths
-- Double-deck exhibits
-- 20x20+ spaces
-- I&D (Installation & Dismantle) services
-- Show services / logistics management
-- Rentals (may add later)
-- Union labor coordination
+### 2. Branded Environments
 
-**Why:** These require capital, inventory, relationships, and complexity that break the lean brokerage model.
+Physical brand presence for offices, showrooms, and event spaces.
+
+| Product Type | Use Cases | Price Range |
+|--------------|-----------|-------------|
+| Office Signage | Lobby signs, wayfinding, wall graphics | $200 - $2,000 |
+| Display Systems | Portable backdrops, banner stands, pop-ups | $300 - $3,000 |
+| Showroom Setups | Product displays, branded fixtures | $1,000 - $5,000 |
+| Event Environments | Conference presence, recruiting events, pop-ups | $1,500 - $5,000 |
+
+### 3. Sales & Marketing Materials
+
+Tools that help your team represent the brand in the field.
+
+| Product Type | Use Cases | Price Range |
+|--------------|-----------|-------------|
+| Presentation Materials | Folders, brochures, sell sheets | $200 - $1,000 |
+| Sales Kits | Packaged materials for field teams | $500 - $2,000 |
+| Leave-Behinds | Branded items for prospect meetings | $100 - $500 |
+| Sample Kits | Product samples with branded packaging | $300 - $1,500 |
 
 ---
 
 ## Productized Packages
 
-| Package | Includes | Price |
-|---------|----------|-------|
-| **Starter** | Table throw + 2 banner stands with custom graphics | $1,500 |
-| **Pro** | 8ft pop-up backwall + table throw + counter with graphic wrap | $3,000 |
-| **Full Booth** | 10ft tension fabric backwall + counter + 2 banner stands + table throw + flooring | $5,000 |
+| Package | What's Included | Starting Price |
+|---------|-----------------|----------------|
+| **Swag Starter** | 50 branded t-shirts + 50 notebooks + 50 pens, all with your logo | $1,500 |
+| **Welcome Kit Program** | Custom welcome kit design + 25 kits (bag, apparel, accessories, welcome card) | $2,500 |
+| **Office Ready** | Lobby sign + 2 wall graphics + reception desk branding | $3,000 |
+| **Event Presence** | Backdrop display + branded table setup + 100 giveaway items | $3,500 |
+| **Sales Enablement** | 25 sales kits (folder, materials, branded items) + presentation backdrop | $4,000 |
+| **Full Brand Package** | Comprehensive brand presence: swag program + office signage + event setup + sales materials | $8,000+ |
 
 All packages include:
-- Custom graphic design consultation
-- Print-ready file review
-- Direct shipping to venue or office
-- Setup instructions
+- Brand consultation and recommendations
+- Design review and file preparation
+- Quality control and proofing
+- Direct shipping to your location(s)
+- Setup guidance where applicable
 
 ---
 
-## Wholesale Supplier Partners
+## Supplier Network
 
-### Tier 1: Primary Partner
+### Merchandise & Promotional Products
 
-**Orbus Visual Communications** (orbus.com)
-- Status: Active dealer account
-- Model: Trade-only wholesale, no setup fees
-- Products: Banner stands, popup displays, tension fabric, table throws, outdoor displays, counters, lighting
-- Benefits: White-label branding (The Exhibitor's Handbook), drop-ship to customers, online ordering, free dealer training (Orbus University)
-- Locations: Chicago, Las Vegas, Toronto
+**Primary Partners:**
+- ASI/SAGE network access for 1M+ promotional products
+- Curated supplier relationships for quality apparel (Bella+Canvas, Next Level, Nike, etc.)
+- Custom manufacturing partners for unique items
 
-### Tier 2: Secondary Partners
+### Environments & Displays
 
-**Classic Exhibits** (classicexhibits.com)
-- Model: Private-label manufacturer, 200+ distributor partners
-- Best for: Higher-end portable/modular when Orbus can't deliver
-- Training: Shared Knowledge University (free, Portland OR)
-- Action: Apply via New Distributor Information Form
+**Primary Partners:**
+- Orbus Visual Communications — displays, signage, portable environments
+- Custom print partners — large format, signage, wall graphics
+- Fixture and furniture suppliers for showroom needs
 
-**Planet Tradeshow** (planettradeshow.com)
-- Model: Wholesale print provider, fabric displays and SEG graphics
-- Best for: Print-on-demand, direct ship, no minimums
+### Materials & Print
 
-**Visigraph** (visigraph.com)
-- Model: Wholesale broker for portable displays
-- Minimum: $500 for new clients
-- Best for: Backup supplier for quick turnarounds
-
-### Tier 3: Future Expansion
-
-**Nimlok** (nimlok.com) — Branded dealer network, more complex onboarding
-**Skyline Exhibits** (skyline.com) — Local dealer network with ExhibitGo portable line
+**Primary Partners:**
+- Commercial print partners — brochures, folders, materials
+- Packaging suppliers — custom boxes, kits, presentation packaging
+- Specialty print — unique substrates, finishes, custom work
 
 ---
 
 ## Margin Structure
 
-| Product Type | Typical Margin | Notes |
-|--------------|----------------|-------|
-| Hardware (banner stands, frames) | 40-50% | Higher margin, one-time purchase |
-| Graphics/Printing | 35-45% | Recurring revenue (refreshes) |
-| Complete Kits | 35-40% | Bundled pricing, slight discount |
-| Consultative Premium | +10-15% | Guidance, layout help, design input |
+| Category | Typical Margin | Notes |
+|----------|----------------|-------|
+| Branded Merchandise | 35-50% | Higher on curated/premium items |
+| Apparel Programs | 40-50% | Volume discounts passed partially to client |
+| Signage & Displays | 40-50% | One-time purchase, higher margin |
+| Print Materials | 35-45% | Recurring opportunity (refreshes, restocks) |
+| Kits & Programs | 35-40% | Bundled pricing, service premium |
+| Consultation Premium | +10-15% | For complex projects, custom sourcing |
 
 ---
 
 ## Competitive Positioning
 
-| Competitor Type | Their Weakness | Standwell's Advantage |
-|-----------------|----------------|----------------------|
-| Full-Service Exhibit Houses | Don't want sub-$10K deals; slow, complex | Fast, simple, built for smaller budgets |
-| Online Display Retailers | No guidance; overwhelming options | Consultative — we tell you what to get |
-| Amazon / Vistaprint | Low quality; no design help | Professional-grade products that last |
-| DIY / Internal | Time-consuming; learning curve | We handle everything; you just show up |
+| Competitor Type | Their Gap | Standwell's Position |
+|-----------------|-----------|---------------------|
+| **Big Promo Distributors** (4imprint, etc.) | Overwhelming catalogs, no curation, transactional | We curate and advise — you don't wade through 500,000 SKUs |
+| **Full-Service Agencies** | Too expensive, too complex for SMBs, long timelines | Same consultative approach, right-sized for growing companies |
+| **DIY / Amazon** | Low quality, no brand consistency, no guidance | Professional-grade, cohesive brand presentation |
+| **Print Shops** | Limited to print, no merchandise or environments | Full brand presence across all touchpoints |
+| **Multiple Vendors** | Fragmented, time-consuming, inconsistent | One partner for everything brand presentation |
 
 ---
 
@@ -175,54 +180,63 @@ All packages include:
 
 | ✅ Standwell Does | ❌ Standwell Doesn't Do |
 |-------------------|------------------------|
-| Portable displays under $5K | Custom fabrication or island booths |
-| Transactional, fast purchases | Enterprise accounts with RFPs |
-| Quick turnaround (2-3 weeks) | Complex multi-show programs |
-| 10x10 and smaller booth spaces | 20x20+ island exhibits |
-| Self-setup displays | I&D services or union labor |
-| Direct ship to customer | Warehousing or asset management |
+| Curated merchandise programs | Massive product catalog browsing |
+| Brand environment setup | Architectural buildouts or construction |
+| Sales and marketing materials | Full creative/design agency services |
+| Event presence and displays | Full event production or management |
+| Consultation and recommendations | Order-taking without guidance |
+| Direct shipping and fulfillment | Long-term warehousing or inventory management |
+| Projects under $10K | Enterprise RFPs or massive corporate programs |
 
 ---
 
 ## Sales Process
 
 1. **Inquiry** — Customer reaches out via website, email, or referral
-2. **Discovery** — Quick call or message: What's the event? What's the space? What's the budget?
-3. **Recommendation** — Propose specific products or package, explain why
+2. **Discovery** — Quick call or message: What touchpoints matter? What's the use case? What's the budget?
+3. **Recommendation** — Propose specific products/package, explain the approach
 4. **Quote** — Send formal quote with pricing, timeline, and what's included
-5. **Design** — Collect logos/assets, confirm graphic layout
-6. **Order** — Place with Orbus/supplier, confirm ship date
-7. **Delivery** — Direct ship to customer or venue
-8. **Follow-up** — Check in post-event, ask for referral, offer replacement graphics
+5. **Design** — Collect brand assets, confirm layouts and specifications
+6. **Production** — Place orders with suppliers, manage quality control
+7. **Delivery** — Direct ship to customer location(s)
+8. **Follow-up** — Check in on satisfaction, identify ongoing needs, ask for referral
 
 ---
 
 ## Key Messaging
 
-**For First-Time Exhibitors:**
-"Your first trade show shouldn't be stressful. We'll tell you exactly what you need — nothing more, nothing less."
+**Hero Message:**
+"We help growing companies look as good as they actually are — through merchandise, environments, and materials that represent your brand everywhere it matters."
 
-**For Occasional Exhibitors:**
-"No long-term contracts, no complicated process. Just order what you need and we'll get it to you."
+**For HR / People Teams:**
+"Your team's first impression of the company starts with what's on their desk day one. Make it count."
 
-**For Corporate/Internal Events:**
-"Professional branded displays for your lobby, sales kickoff, or recruiting event. Same quality, simpler process."
+**For Marketing Teams:**
+"Your brand shows up in a hundred places. We make sure it looks right in all of them."
 
-**For Budget-Conscious Buyers:**
-"You don't need a $20K custom booth to look professional. We specialize in high-impact displays under $5K."
+**For Sales Teams:**
+"Your sales team is out there representing your brand. We make sure they've got the tools to look as professional as your product is."
+
+**For Founders:**
+"Not a swag catalog. Not an agency. A partner who gets brand presentation done — so you can focus on building your company."
+
+**For Office/Facilities:**
+"Your office is a brand touchpoint too. From the lobby to the conference room, we help you show up well."
 
 ---
 
 ## Content Topics (SEO / Marketing)
 
-- First trade show checklist
-- 10x10 booth ideas for startups
-- Trade show display buyer's guide
-- Banner stand vs. pop-up display: which to choose
-- How to design trade show graphics that pop
-- What to bring to your first trade show
-- Trade show ROI calculator
-- Portable display setup tips
+- How to build an employee swag program that people actually want
+- Welcome kit ideas for new hire onboarding
+- Brand consistency across multiple locations
+- Office branding ideas for startups
+- Sales enablement materials that close deals
+- Event presence on a budget
+- Branded merchandise that doesn't end up in the trash
+- Building brand culture through physical touchpoints
+- Client gift ideas that stand out
+- How to look professional at your first big event
 
 ---
 
@@ -232,4 +246,5 @@ All packages include:
 - **Brand:** Standwell
 - **Operator:** Ryan Gardon
 - **Location:** San Francisco Bay Area
-- **Primary Supplier:** Orbus (active dealer)
+- **Website:** standwelldisplays.com (to be updated)
+- **Email:** hello@standwelldisplays.com

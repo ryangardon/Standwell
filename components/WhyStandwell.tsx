@@ -2,47 +2,37 @@
 
 import { useEffect, useRef } from 'react'
 
-const valueProps = [
+const differentiators = [
   {
-    number: '01',
-    title: 'Direct pricing, no markup',
-    body: "We work with manufacturers directly — no exhibit house overhead, no sales rep commission buried in the quote. You get quality products at honest prices.",
+    title: 'Curated, not overwhelming',
+    body: "We recommend what you need. No 500,000-item catalog to wade through — just the right products for your goals and budget.",
     icon: (
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-        <path d="M13 2.5L16 9.5L23.5 10.6L18.5 15.5L19.75 23L13 19.5L6.25 23L7.5 15.5L2.5 10.6L10 9.5L13 2.5Z" stroke="#1E9BD7" strokeWidth="1.75" strokeLinejoin="round"/>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" stroke="#1E9BD7" strokeWidth="1.5" strokeLinejoin="round" fill="none"/>
       </svg>
     ),
   },
   {
-    number: '02',
-    title: 'Fast turnaround',
-    body: "Most orders ship within 5–7 business days. We know you booked the booth last minute — we've been there. Rush options available when you really need it.",
+    title: 'One partner, every touchpoint',
+    body: "Merchandise, environments, materials — all handled. Stop juggling vendors and managing timelines across five different companies.",
     icon: (
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-        <circle cx="13" cy="13" r="10" stroke="#1E9BD7" strokeWidth="1.75"/>
-        <path d="M13 7.5V13.5L16.5 16" stroke="#1E9BD7" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="3" stroke="#1E9BD7" strokeWidth="1.5"/>
+        <circle cx="4" cy="6" r="2" stroke="#1E9BD7" strokeWidth="1.5"/>
+        <circle cx="20" cy="6" r="2" stroke="#1E9BD7" strokeWidth="1.5"/>
+        <circle cx="4" cy="18" r="2" stroke="#1E9BD7" strokeWidth="1.5"/>
+        <circle cx="20" cy="18" r="2" stroke="#1E9BD7" strokeWidth="1.5"/>
+        <path d="M6 7l4 3.5M18 7l-4 3.5M6 17l4-3.5M18 17l-4-3.5" stroke="#1E9BD7" strokeWidth="1.25" strokeLinecap="round"/>
       </svg>
     ),
   },
   {
-    number: '03',
-    title: 'Actually helpful humans',
-    body: 'Real people who answer questions and help you pick the right product. No bots. No waiting a week for a quote. Just tell us what you need.',
+    title: 'Built for growing companies',
+    body: "Right-sized service without agency complexity or enterprise bureaucracy. We work with teams of 10 to 200 — not Fortune 500 procurement.",
     icon: (
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-        <path d="M3.5 19V21.5L8 19H21.5C22.6 19 23.5 18.1 23.5 17V7.5C23.5 6.4 22.6 5.5 21.5 5.5H4.5C3.4 5.5 2.5 6.4 2.5 7.5V17C2.5 17.55 2.75 18.05 3.14 18.4" stroke="#1E9BD7" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M8 11.5H18M8 15H14" stroke="#1E9BD7" strokeWidth="1.75" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    number: '04',
-    title: 'No minimums, no contracts',
-    body: 'Order one banner stand or outfit five locations. We&apos;re built for transactional buyers who want to order and move on — not lock into a relationship.',
-    icon: (
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-        <rect x="4" y="4" width="18" height="18" rx="3" stroke="#1E9BD7" strokeWidth="1.75"/>
-        <path d="M9 13L11.5 15.5L17 10" stroke="#1E9BD7" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M3 17l5-5 4 4 9-9" stroke="#1E9BD7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M15 7h6v6" stroke="#1E9BD7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -67,55 +57,31 @@ export default function WhyStandwell() {
   }, [])
 
   return (
-    <section id="why" ref={sectionRef} className="bg-brand-gray py-28 border-t border-zinc-100">
+    <section ref={sectionRef} className="bg-white py-32 border-t border-zinc-100">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Section header */}
-        <div className="max-w-2xl mb-6">
-          <p className="reveal text-brand-blue text-sm font-medium tracking-widest uppercase mb-3">
+        <div className="mb-16">
+          <p className="reveal text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">
             Why Standwell
           </p>
-          <h2 className="reveal reveal-delay-1 font-display text-4xl sm:text-5xl font-bold text-brand-black leading-tight tracking-tight">
-            We exist because the display industry is annoying
+          <h2 className="reveal reveal-delay-1 font-display font-bold text-brand-black leading-tight tracking-tight" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
+            A different kind of<br />brand partner.
           </h2>
         </div>
-        <p className="reveal reveal-delay-2 text-brand-mid text-lg leading-relaxed mb-16 max-w-2xl">
-          Long lead times. Confusing quotes. Salespeople who won&apos;t give you a price without a
-          30-minute call. We cut all of that out.
-        </p>
 
-        {/* Value props — 2x2 grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {valueProps.map((vp, i) => (
-            <div key={vp.number} className={`reveal reveal-delay-${(i % 2) + 1}`}>
-              <div className="flex items-center gap-3 mb-5">
-                <div className="p-2.5 bg-white border border-zinc-100 rounded-sm shadow-sm">
-                  {vp.icon}
-                </div>
-                <span className="font-display text-xs font-bold text-zinc-300 tracking-widest">
-                  {vp.number}
-                </span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+          {differentiators.map((d, i) => (
+            <div key={d.title} className={`reveal reveal-delay-${i + 1}`}>
+              <div className="w-12 h-12 rounded-sm bg-brand-blue/8 border border-brand-blue/15 flex items-center justify-center mb-6">
+                {d.icon}
               </div>
               <h3 className="font-display text-xl font-bold text-brand-black mb-3 tracking-tight">
-                {vp.title}
+                {d.title}
               </h3>
-              <p
-                className="text-brand-mid text-base leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: vp.body }}
-              />
+              <p className="text-brand-mid text-base leading-relaxed">
+                {d.body}
+              </p>
             </div>
           ))}
-        </div>
-
-        {/* Brand quote */}
-        <div className="reveal mt-20 pt-16 border-t border-zinc-200">
-          <blockquote className="max-w-2xl">
-            <p className="font-display text-2xl sm:text-3xl font-semibold text-brand-black leading-snug tracking-tight">
-              &ldquo;Show Up. Stand Out.&rdquo;
-            </p>
-            <footer className="mt-4 text-brand-blue text-sm font-medium tracking-wide">
-              — Simple displays. Real results.
-            </footer>
-          </blockquote>
         </div>
       </div>
     </section>

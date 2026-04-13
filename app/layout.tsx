@@ -15,9 +15,9 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Standwell — Portable Displays for Events & Conferences',
+  title: 'Standwell — Your Brand Presentation Partners',
   description:
-    'Banner stands, backdrops, fabric displays, and table throws — shipped fast, without the markup. Look professional at your next event.',
+    'Merchandise, environments, and sales materials. We handle it — you stay focused on your business.',
   metadataBase: new URL('https://standwelldisplays.com'),
   icons: {
     icon: '/logo-icon.png',
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     apple: '/logo-icon.png',
   },
   openGraph: {
-    title: 'Standwell — Portable Displays for Events & Conferences',
+    title: 'Standwell — Your Brand Presentation Partners',
     description:
-      'Quality portable displays shipped fast, without the markup.',
+      'Merchandise, environments, and sales materials. We handle it — you stay focused on your business.',
     url: 'https://standwelldisplays.com',
     siteName: 'Standwell',
     type: 'website',
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
         url: '/logo-full.png',
         width: 500,
         height: 500,
-        alt: 'Standwell — Portable Displays',
+        alt: 'Standwell — Brand Presentation',
       },
     ],
   },
   twitter: {
     card: 'summary',
-    title: 'Standwell — Portable Displays for Events & Conferences',
-    description: 'Quality portable displays shipped fast, without the markup.',
+    title: 'Standwell — Your Brand Presentation Partners',
+    description: 'Merchandise, environments, and sales materials. We handle it — you stay focused on your business.',
     images: ['/logo-full.png'],
   },
   robots: {

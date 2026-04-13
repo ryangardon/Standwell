@@ -2,6 +2,18 @@
 
 Next.js 14 + Tailwind CSS website for [standwelldisplays.com](https://standwelldisplays.com).
 
+## Brand Positioning
+
+Standwell is a **brand presentation consultancy** for growing companies. We help businesses show up professionally at every touchpoint:
+
+- **Branded Merchandise & Swag** — Curated apparel, welcome kits, promotional products
+- **Branded Environments** — Office signage, displays, showroom setups
+- **Sales & Marketing Materials** — Presentation tools, sales kits, leave-behinds
+
+**Tagline:** "Your brand, everywhere it matters."
+
+**Target Customer:** Marketing managers, HR/People leads, founders, and ops teams at companies with 10-200 employees who want cohesive brand presentation without managing multiple vendors.
+
 ## Deploy to Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
@@ -47,12 +59,12 @@ app/
   globals.css       # Global styles, reveal animations
 components/
   Header.tsx        # Sticky nav with scroll-aware background
-  Hero.tsx          # Dark hero with display illustration + CTA
-  TrustBar.tsx      # Blue trust signal strip
-  Products.tsx      # 2×2 product card grid
-  WhyStandwell.tsx  # 3-column value props
+  Hero.tsx          # Hero section with CTA
+  TrustBar.tsx      # Trust signal strip
+  Products.tsx      # Service category cards (was product cards)
+  WhyStandwell.tsx  # Value props
   QuoteForm.tsx     # Contact/quote form (Formspree)
-  Footer.tsx        # Dark footer
+  Footer.tsx        # Footer
 ```
 
 ## Customization
@@ -60,4 +72,10 @@ components/
 - **Colors:** Defined in `tailwind.config.ts` under `theme.extend.colors.brand`
 - **Fonts:** Space Grotesk (display) + DM Sans (body) via `next/font/google` in `app/layout.tsx`
 - **Form fields:** Edit `components/QuoteForm.tsx`
-- **Products:** Edit the `products` array in `components/Products.tsx`
+- **Services:** Edit the `products` array in `components/Products.tsx` (rename to services)
+
+## Brand Guidelines
+
+- **Voice:** Warm, direct, no-BS — a knowledgeable partner, not a corporate pitch
+- **Promise:** Simple, professional brand presentation without the complexity
+- **Differentiation:** Curated recommendations (not overwhelming catalogs), consultative approach (not just order-taking)

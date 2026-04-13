@@ -36,14 +36,13 @@ export default function QuoteForm() {
 
     try {
       if (!FORMSPREE_ID) {
-        // Fallback: open email client
         const name = data.get('name') as string
         const email = data.get('email') as string
         const product = data.get('product') as string
         const details = data.get('details') as string
-        const subject = encodeURIComponent(`Quote Request — ${product}`)
+        const subject = encodeURIComponent(`New inquiry — ${product}`)
         const body = encodeURIComponent(
-          `Name: ${name}\nEmail: ${email}\nProduct: ${product}\n\nDetails:\n${details}`
+          `Name: ${name}\nEmail: ${email}\nService: ${product}\n\nMessage:\n${details}`
         )
         window.location.href = `mailto:hello@standwelldisplays.com?subject=${subject}&body=${body}`
         setState('success')
@@ -74,55 +73,38 @@ export default function QuoteForm() {
   }
 
   return (
-    <section id="quote" ref={sectionRef} className="bg-white py-28 border-t border-zinc-100">
+    <section id="quote" ref={sectionRef} className="bg-[#F9FAFB] py-32 border-t border-zinc-200">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
           {/* Left — copy */}
           <div className="lg:sticky lg:top-32">
-            <p className="reveal text-brand-blue text-sm font-medium tracking-widest uppercase mb-3">
-              Get a quote
+            <p className="reveal text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">
+              Get started
             </p>
-            <h2 className="reveal reveal-delay-1 font-display text-4xl sm:text-5xl font-bold text-brand-black leading-tight tracking-tight mb-5">
-              Get a quote in 24 hours
+            <h2 className="reveal reveal-delay-1 font-display font-bold text-brand-black leading-tight tracking-tight mb-6" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}>
+              Let's talk about<br />your brand.
             </h2>
-            <p className="reveal reveal-delay-2 text-brand-mid text-lg leading-relaxed mb-8">
-              Tell us what you need. We&apos;ll get back to you with pricing and product recommendations — no sales pressure, no confusing configurators.
+            <p className="reveal reveal-delay-2 text-brand-mid text-lg leading-relaxed mb-10">
+              Tell us what you're working on. We'll get back to you within 24 hours with a recommendation.
             </p>
 
-            <div className="reveal reveal-delay-3 space-y-4">
+            <div className="reveal reveal-delay-3 space-y-5">
               {[
-                { label: 'Response time', value: 'Within 24 hours' },
-                { label: 'Shipping', value: '5–7 business days (rush available)' },
-                { label: 'Payment', value: 'Stripe, invoice, or bank transfer' },
+                { icon: '↩', label: 'Response within 24 hours' },
+                { icon: '→', label: 'Typical delivery in 2–4 weeks' },
+                { icon: '◎', label: 'No commitment to inquire' },
               ].map((item) => (
-                <div key={item.label} className="flex items-start gap-3">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    className="mt-0.5 flex-shrink-0"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M3 8L6.5 11.5L13 5"
-                      stroke="#1E9BD7"
-                      strokeWidth="1.75"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  <span className="text-sm text-brand-mid">
-                    <span className="font-semibold text-brand-black">{item.label}:</span>{' '}
-                    {item.value}
-                  </span>
+                <div key={item.label} className="flex items-center gap-3">
+                  <span className="text-brand-blue text-base w-4 text-center">{item.icon}</span>
+                  <span className="text-brand-mid text-sm">{item.label}</span>
                 </div>
               ))}
             </div>
 
-            <div className="reveal reveal-delay-4 mt-8 pt-8 border-t border-zinc-100">
+            <div className="reveal reveal-delay-4 mt-10 pt-8 border-t border-zinc-200">
               <p className="text-sm text-brand-mid">
-                Prefer to just email?{' '}
+                Prefer email?{' '}
                 <a
                   href="mailto:hello@standwelldisplays.com"
                   className="text-brand-blue hover:underline underline-offset-4"
@@ -136,45 +118,34 @@ export default function QuoteForm() {
           {/* Right — form */}
           <div className="reveal reveal-delay-2">
             {state === 'success' ? (
-              <div className="flex flex-col items-start gap-4 p-10 bg-brand-gray border border-zinc-100 rounded-sm">
+              <div className="flex flex-col items-start gap-4 p-10 bg-white border border-zinc-100 rounded-sm shadow-sm">
                 <div className="p-3 bg-brand-blue/10 rounded-full">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path
-                      d="M5 12L9.5 16.5L19 7"
-                      stroke="#1E9BD7"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                    <path d="M5 12L9.5 16.5L19 7" stroke="#1E9BD7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <h3 className="font-display text-2xl font-bold text-brand-black">
-                  You&apos;re all set.
+                  You're all set.
                 </h3>
                 <p className="text-brand-mid leading-relaxed">
-                  We got your request and we&apos;ll be in touch within 24 hours with pricing.
-                  Check your inbox — and your spam folder just in case.
+                  We got your message and will be in touch within 24 hours.
                 </p>
                 <button
                   onClick={() => setState('idle')}
                   className="mt-2 text-brand-blue text-sm font-medium hover:underline underline-offset-4"
                 >
-                  Submit another request
+                  Send another message
                 </button>
               </div>
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="bg-brand-gray border border-zinc-100 rounded-sm p-8 sm:p-10 space-y-6"
+                className="bg-white border border-zinc-100 rounded-sm shadow-sm p-8 sm:p-10 space-y-6"
                 noValidate
               >
-                {/* Name */}
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-semibold text-brand-black mb-1.5"
-                  >
-                    Your name <span className="text-brand-blue">*</span>
+                  <label htmlFor="name" className="block text-sm font-semibold text-brand-black mb-1.5">
+                    Name <span className="text-brand-blue">*</span>
                   </label>
                   <input
                     id="name"
@@ -187,13 +158,9 @@ export default function QuoteForm() {
                   />
                 </div>
 
-                {/* Email */}
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-semibold text-brand-black mb-1.5"
-                  >
-                    Work email <span className="text-brand-blue">*</span>
+                  <label htmlFor="email" className="block text-sm font-semibold text-brand-black mb-1.5">
+                    Email <span className="text-brand-blue">*</span>
                   </label>
                   <input
                     id="email"
@@ -206,12 +173,8 @@ export default function QuoteForm() {
                   />
                 </div>
 
-                {/* Product */}
                 <div>
-                  <label
-                    htmlFor="product"
-                    className="block text-sm font-semibold text-brand-black mb-1.5"
-                  >
+                  <label htmlFor="product" className="block text-sm font-semibold text-brand-black mb-1.5">
                     What do you need? <span className="text-brand-blue">*</span>
                   </label>
                   <select
@@ -225,43 +188,34 @@ export default function QuoteForm() {
                       backgroundPosition: 'right 16px center',
                     }}
                   >
-                    <option value="">Select a product...</option>
-                    <option value="Fabric display">Fabric display (tension fabric backwall)</option>
-                    <option value="Backlit display">Backlit display (LED lightbox)</option>
-                    <option value="Portable kit">Portable kit (complete booth package)</option>
-                    <option value="Banner stand">Banner stand (retractable)</option>
-                    <option value="Accessories">Accessories (lights, throws, counters)</option>
-                    <option value="Multiple products">Multiple products</option>
-                    <option value="Not sure — help me choose">Not sure — help me choose</option>
+                    <option value="">Select...</option>
+                    <option value="Branded Merchandise">Branded Merchandise</option>
+                    <option value="Branded Environments">Branded Environments</option>
+                    <option value="Sales Materials">Sales Materials</option>
+                    <option value="All of the above">All of the above</option>
+                    <option value="Not sure yet">Not sure yet</option>
                   </select>
                 </div>
 
-                {/* Details */}
                 <div>
-                  <label
-                    htmlFor="details"
-                    className="block text-sm font-semibold text-brand-black mb-1.5"
-                  >
-                    Tell us about your event
+                  <label htmlFor="details" className="block text-sm font-semibold text-brand-black mb-1.5">
+                    Message
                   </label>
                   <textarea
                     id="details"
                     name="details"
-                    rows={4}
-                    placeholder="Space size, event date, quantity, any brand assets you have — whatever you know. The more detail, the faster we can quote."
+                    rows={5}
+                    placeholder="Tell us about your company, goals, timeline, and budget — whatever you know."
                     className="w-full bg-white border border-zinc-200 rounded-sm px-4 py-3 text-sm text-brand-black placeholder:text-zinc-400 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors resize-none"
                   />
                 </div>
 
-                {/* Error */}
                 {state === 'error' && (
                   <p className="text-red-600 text-sm bg-red-50 border border-red-100 rounded-sm px-4 py-3">
-                    {errorMsg ||
-                      'Something went wrong. Please try again or email us directly.'}
+                    {errorMsg || 'Something went wrong. Please try again or email us directly.'}
                   </p>
                 )}
 
-                {/* Submit */}
                 <button
                   type="submit"
                   disabled={state === 'submitting'}
@@ -269,56 +223,16 @@ export default function QuoteForm() {
                 >
                   {state === 'submitting' ? (
                     <>
-                      <svg
-                        className="animate-spin"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        aria-hidden="true"
-                      >
-                        <circle
-                          cx="8"
-                          cy="8"
-                          r="6"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeOpacity="0.3"
-                        />
-                        <path
-                          d="M8 2a6 6 0 0 1 6 6"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                        />
+                      <svg className="animate-spin" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="2" strokeOpacity="0.3"/>
+                        <path d="M8 2a6 6 0 0 1 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                       </svg>
                       Sending...
                     </>
                   ) : (
-                    <>
-                      Get Your Quote
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M3 8h10M9 4l4 4-4 4"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </>
+                    'Get Started'
                   )}
                 </button>
-
-                <p className="text-center text-xs text-zinc-400">
-                  No spam. No sales calls unless you want one. Just a fast, honest quote.
-                </p>
               </form>
             )}
           </div>
