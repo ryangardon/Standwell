@@ -1,15 +1,11 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-
-type FormState = 'idle' | 'submitting' | 'success' | 'error'
-
-const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID
+import { useEffect, useRef } from 'react'
+import { useForm, ValidationError } from '@formspree/react'
 
 export default function QuoteForm() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const [state, setState] = useState<FormState>('idle')
-  const [errorMsg, setErrorMsg] = useState('')
+  const [state, handleSubmit] = useForm('xojyqbbd')
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,52 +21,6 @@ export default function QuoteForm() {
     if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
   }, [])
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setState('submitting')
-    setErrorMsg('')
-
-    const form = e.currentTarget
-    const data = new FormData(form)
-
-    try {
-      if (!FORMSPREE_ID) {
-        const firstName = data.get('firstName') as string
-        const lastName = data.get('lastName') as string
-        const email = data.get('email') as string
-        const company = data.get('company') as string
-        const product = data.get('product') as string
-        const details = data.get('details') as string
-        const subject = encodeURIComponent(`New inquiry — ${product}`)
-        const body = encodeURIComponent(
-          `Name: ${firstName} ${lastName}\nEmail: ${email}\nCompany: ${company}\nService: ${product}\n\nMessage:\n${details}`
-        )
-        window.location.href = `mailto:sales@standwelldisplays.com?subject=${subject}&body=${body}`
-        setState('success')
-        return
-      }
-
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      })
-
-      if (res.ok) {
-        setState('success')
-        form.reset()
-      } else {
-        const json = await res.json()
-        throw new Error(json?.errors?.[0]?.message || 'Something went wrong.')
-      }
-    } catch (err) {
-      setState('error')
-      setErrorMsg(
-        err instanceof Error ? err.message : 'Something went wrong. Please email us directly.'
-      )
-    }
-  }
 
   const inputClass =
     'w-full px-[18px] py-[14px] text-[15px] font-light text-white outline-none transition-colors duration-200 border focus:border-white/50'
@@ -119,7 +69,7 @@ export default function QuoteForm() {
 
         {/* Right — Form */}
         <div className="fade-up mt-10 md:mt-0">
-          {state === 'success' ? (
+          {state.succeeded ? (
             <div className="flex flex-col gap-4 p-10 border" style={{ background: 'rgba(255,255,255,0.08)', borderColor: 'rgba(255,255,255,0.15)' }}>
               <div className="w-8 h-8 bg-white/20 flex items-center justify-center">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -130,12 +80,6 @@ export default function QuoteForm() {
               <p style={{ fontSize: '14px', fontWeight: 300, color: 'rgba(255,255,255,0.6)', lineHeight: 1.75 }}>
                 We got your message and will be in touch within 24 hours.
               </p>
-              <button
-                onClick={() => setState('idle')}
-                className="text-white/60 text-sm font-medium hover:text-white transition-colors mt-2"
-              >
-                Send another message
-              </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-4" noValidate>
@@ -200,18 +144,14 @@ export default function QuoteForm() {
                 />
               </div>
 
-              {state === 'error' && (
-                <p className="text-white/80 text-sm bg-white/10 border border-white/20 px-4 py-3">
-                  {errorMsg || 'Something went wrong. Please try again or email us directly.'}
-                </p>
-              )}
+              <ValidationError errors={state.errors} className="text-white/80 text-sm bg-white/10 border border-white/20 px-4 py-3" />
 
               <button
                 type="submit"
-                disabled={state === 'submitting'}
+                disabled={state.submitting}
                 className="self-start bg-white text-brand-blue text-[13px] font-medium tracking-[0.08em] uppercase px-10 py-[18px] transition-all duration-200 hover:bg-brand-blue-light disabled:opacity-60 hover:-translate-y-px flex items-center gap-2"
               >
-                {state === 'submitting' ? (
+                {state.submitting ? (
                   <>
                     <svg className="animate-spin" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                       <circle cx="7" cy="7" r="5" stroke="currentColor" strokeWidth="2" strokeOpacity="0.3"/>
