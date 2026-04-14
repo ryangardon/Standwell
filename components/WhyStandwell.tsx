@@ -46,8 +46,8 @@ export default function WhyStandwell() {
   return (
     <section id="why" ref={sectionRef} className="bg-brand-gray py-16 px-5 md:py-[120px] md:px-20">
       <div className="flex flex-col md:grid md:gap-20 md:items-start" style={{ gridTemplateColumns: '1fr 1fr' }}>
-        {/* Left — sticky on desktop */}
-        <div className="fade-up mb-10 md:mb-0" style={{ position: 'sticky', top: '120px' }}>
+        {/* Left — sticky on desktop only */}
+        <div className="fade-up mb-10 md:mb-0 md:sticky md:top-[120px]">
           <div className="flex items-center gap-2.5 mb-5">
             <div className="w-6 h-px bg-brand-blue flex-shrink-0" />
             <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-brand-blue">Why Standwell</span>
