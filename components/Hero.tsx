@@ -18,7 +18,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="min-h-screen pt-[108px] bg-[#F9FAFB] flex items-center overflow-hidden relative">
+    <section className="min-h-screen pt-[80px] md:pt-[108px] bg-[#F9FAFB] flex items-center overflow-hidden relative">
 
       {/* Dot grid */}
       <div
@@ -33,7 +33,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Parallax blue glow — left */}
+      {/* Parallax blue glow */}
       <div
         ref={orbRef}
         className="absolute pointer-events-none"
@@ -60,53 +60,48 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div
-        className="relative z-10 w-full px-20 py-20 grid items-center"
-        style={{ gridTemplateColumns: '1fr 1fr', gap: '48px' }}
-      >
+      <div className="relative z-10 w-full grid items-center px-5 py-16 gap-12 md:px-12 md:py-20 lg:px-20 lg:py-24 hero-grid">
+
         {/* LEFT — copy */}
         <div>
-          <div className="flex items-center gap-3 mb-10">
-            <div className="w-8 h-px bg-brand-blue flex-shrink-0" />
-            <span className="text-sm font-semibold tracking-[0.14em] uppercase text-brand-blue">
+          <div className="flex items-center gap-3 mb-6 md:mb-10">
+            <div className="w-6 md:w-8 h-px bg-brand-blue flex-shrink-0" />
+            <span className="text-xs md:text-sm font-semibold tracking-[0.14em] uppercase text-brand-blue">
               Branded Products &amp; Merchandise
             </span>
           </div>
 
           <h1
-            className="font-serif font-light text-brand-black mb-8"
-            style={{ fontSize: 'clamp(52px, 5.5vw, 88px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
+            className="font-serif font-light text-brand-black mb-6 md:mb-8"
+            style={{ fontSize: 'clamp(40px, 7vw, 88px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
           >
             Branded products<br />for <em className="not-italic text-brand-blue">growing</em><br />companies.
           </h1>
 
-          <p className="text-brand-mid mb-14 max-w-lg" style={{ fontSize: '20px', fontWeight: 300, lineHeight: 1.75 }}>
+          <p className="text-brand-mid mb-10 md:mb-14 max-w-lg" style={{ fontSize: 'clamp(16px, 2vw, 20px)', fontWeight: 300, lineHeight: 1.75 }}>
             One partner for everything your team and brand needs — merchandise, displays, and custom products. Sourced, coordinated, and delivered.
           </p>
 
-          <div className="flex items-center gap-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
             <a
               href="#contact"
-              className="group bg-brand-blue text-white font-semibold tracking-[0.08em] uppercase px-10 py-5 text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(30,155,215,0.4)] inline-flex items-center gap-3"
+              className="group bg-brand-blue text-white font-semibold tracking-[0.08em] uppercase px-8 py-4 md:px-10 md:py-5 text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(30,155,215,0.4)] inline-flex items-center gap-3"
             >
               Get a Quote
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
                 <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-            <a
-              href="#services"
-              className="text-brand-mid text-base hover:text-brand-blue transition-colors duration-200 flex items-center gap-2 group"
-            >
+            <a href="#services" className="text-brand-mid text-base hover:text-brand-blue transition-colors duration-200 flex items-center gap-2 group">
               See what we do
               <span className="transition-transform duration-200 group-hover:translate-x-1.5">→</span>
             </a>
           </div>
         </div>
 
-        {/* RIGHT — stacked card composition */}
-        <div className="flex justify-center items-center relative">
-          {/* Dot grid — full right side */}
+        {/* RIGHT — stacked cards (hidden on small mobile, shown md+) */}
+        <div className="hidden md:flex justify-center items-center relative">
+          {/* Dot grid behind cards */}
           <div
             className="absolute pointer-events-none"
             style={{
@@ -119,61 +114,69 @@ export default function Hero() {
             aria-hidden="true"
           />
 
-          {/* Extra wrapper adds padding so unstacked cards don't clip */}
           <div style={{ padding: '40px 140px 120px 20px' }}>
             <div className="hero-stack">
-              {/* Card 4 — bottom */}
               <div className="hero-card hero-card-4">
-                <Image
-                  src="/hero3.png"
-                  alt=""
-                  fill
-                  className="object-cover object-center"
-                  sizes="480px"
-                />
+                <Image src="/hero3.png" alt="" fill className="object-cover object-center" sizes="480px" />
               </div>
-              {/* Card 3 */}
               <div className="hero-card hero-card-3">
-                <Image
-                  src="/hero2.png"
-                  alt=""
-                  fill
-                  className="object-cover object-center"
-                  sizes="480px"
-                />
+                <Image src="/hero2.png" alt="" fill className="object-cover object-center" sizes="480px" />
               </div>
-              {/* Card 2 */}
               <div className="hero-card hero-card-2">
-                <Image
-                  src="/hero.png"
-                  alt=""
-                  fill
-                  className="object-cover object-center"
-                  sizes="480px"
-                />
+                <Image src="/hero.png" alt="" fill className="object-cover object-center" sizes="480px" />
               </div>
-              {/* Card 1 — top / dominant */}
               <div className="hero-card hero-card-1">
-                <Image
-                  src="/hero0.png"
-                  alt="Standwell branded kit"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                  sizes="480px"
-                />
+                <Image src="/hero0.png" alt="Standwell branded kit" fill className="object-cover object-center" priority sizes="480px" />
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Mobile-only: single image card */}
+        <div className="md:hidden w-full">
+          <div
+            className="relative w-full overflow-hidden"
+            style={{
+              borderRadius: '20px',
+              aspectRatio: '4/3',
+              boxShadow: '0 20px 60px rgba(10,10,10,0.12), 0 0 0 1.5px rgba(30,155,215,0.4), 0 0 24px 6px rgba(30,155,215,0.2)',
+            }}
+          >
+            <Image src="/hero0.png" alt="Standwell branded kit" fill className="object-cover object-center" priority sizes="100vw" />
           </div>
         </div>
       </div>
 
       <style jsx global>{`
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        @media (min-width: 768px) {
+          .hero-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+          }
+        }
+
         .hero-stack {
           position: relative;
-          width: 480px;
-          height: 600px;
+          width: 340px;
+          height: 420px;
           overflow: visible;
+        }
+
+        @media (min-width: 1024px) {
+          .hero-stack {
+            width: 420px;
+            height: 520px;
+          }
+        }
+
+        @media (min-width: 1280px) {
+          .hero-stack {
+            width: 480px;
+            height: 600px;
+          }
         }
 
         .hero-card {
@@ -189,9 +192,8 @@ export default function Hero() {
           will-change: transform;
         }
 
-        /* Default stacked state */
         .hero-card-1 {
-          z-index: 3;
+          z-index: 4;
           transform: translate(0px, 0px) scale(1);
           box-shadow:
             0 28px 70px rgba(10,10,10,0.12),
@@ -202,7 +204,7 @@ export default function Hero() {
         }
 
         .hero-card-2 {
-          z-index: 2;
+          z-index: 3;
           transform: translate(48px, 40px) scale(0.975);
           box-shadow:
             0 18px 44px rgba(10,10,10,0.09),
@@ -231,7 +233,6 @@ export default function Hero() {
             0 0 8px 1px rgba(30,155,215,0.06);
         }
 
-        /* Hover unstack */
         .hero-stack:hover .hero-card-1 {
           transform: translate(-36px, -16px) scale(1);
           box-shadow:

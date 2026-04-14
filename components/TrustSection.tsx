@@ -28,22 +28,22 @@ export default function TrustSection() {
   }, [])
 
   return (
-    <div ref={sectionRef} className="bg-white border-t border-brand-border px-20 py-20">
-      <p className="fade-up text-[11px] font-semibold tracking-[0.18em] uppercase text-brand-light text-center mb-12">
+    <div ref={sectionRef} className="bg-white border-t border-brand-border px-5 py-12 md:px-20 md:py-20">
+      <p className="fade-up text-[11px] font-semibold tracking-[0.18em] uppercase text-brand-light text-center mb-8 md:mb-12">
         What you can expect
       </p>
-      <div className="fade-up grid grid-cols-4 gap-px bg-brand-border border border-brand-border">
+      <div className="fade-up grid grid-cols-2 md:grid-cols-4 gap-px bg-brand-border border border-brand-border">
         {stats.map((stat, i) => (
           <div
             key={stat.label}
-            className="group relative bg-white px-8 py-12 text-center overflow-hidden transition-all duration-300 hover:bg-brand-blue cursor-default"
+            className="group relative bg-white px-4 py-10 md:px-8 md:py-12 text-center overflow-hidden transition-all duration-300 hover:bg-brand-blue cursor-default"
           >
             {/* Hover bg ripple */}
             <div className="absolute inset-0 bg-brand-blue scale-0 group-hover:scale-100 transition-transform duration-500 origin-center rounded-full opacity-0 group-hover:opacity-100 group-hover:rounded-none" />
 
             <div
               className="relative z-10 font-serif text-brand-blue mb-3 transition-colors duration-300 group-hover:text-white"
-              style={{ fontSize: '56px', fontWeight: 300, lineHeight: 1 }}
+              style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 300, lineHeight: 1 }}
             >
               {stat.num}
             </div>

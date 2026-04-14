@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Footer() {
   return (
     <>
-      <footer className="bg-brand-black" style={{ padding: '64px 80px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '60px', alignItems: 'start' }}>
+      <footer className="bg-brand-black px-5 py-12 md:px-20 md:py-16 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-[60px] items-start">
         {/* Brand */}
         <div>
           <a href="#" className="flex items-center mb-5 no-underline group" aria-label="Standwell home">
@@ -12,7 +12,7 @@ export default function Footer() {
               alt="StandWell"
               width={160}
               height={160}
-              className="h-16 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200"
+              className="h-14 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200"
               style={{ filter: 'brightness(0) invert(1)' }}
             />
           </a>
@@ -76,8 +76,8 @@ export default function Footer() {
 
       {/* Footer bottom bar */}
       <div
-        className="bg-brand-black flex items-center justify-between"
-        style={{ padding: '24px 80px', borderTop: '1px solid rgba(255,255,255,0.07)' }}
+        className="bg-brand-black flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 px-5 md:px-20"
+        style={{ padding: '20px', borderTop: '1px solid rgba(255,255,255,0.07)' }}
       >
         <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.25)' }}>
           © {new Date().getFullYear()} Standwell. All rights reserved.

@@ -39,7 +39,7 @@ export default function HowItWorks() {
   }, [])
 
   return (
-    <section id="process" ref={sectionRef} className="bg-brand-black text-white py-[120px] px-20 relative overflow-hidden">
+    <section id="process" ref={sectionRef} className="bg-brand-black text-white py-16 px-5 md:py-[120px] md:px-20 relative overflow-hidden">
       {/* Subtle blue glow top-left */}
       <div
         className="absolute pointer-events-none"
@@ -53,31 +53,33 @@ export default function HowItWorks() {
       />
 
       {/* Header */}
-      <div className="fade-up grid gap-20 items-end mb-20 relative z-10" style={{ gridTemplateColumns: '1fr 1fr' }}>
-        <div>
-          <div className="flex items-center gap-2.5 mb-5">
-            <div className="w-6 h-px bg-brand-blue flex-shrink-0" />
-            <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-brand-blue">How It Works</span>
+      <div className="fade-up mb-10 md:mb-20 relative z-10">
+        <div className="md:grid md:gap-20 md:items-end" style={{ gridTemplateColumns: '1fr 1fr' }}>
+          <div>
+            <div className="flex items-center gap-2.5 mb-5">
+              <div className="w-6 h-px bg-brand-blue flex-shrink-0" />
+              <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-brand-blue">How It Works</span>
+            </div>
+            <h2
+              className="font-serif font-light text-white"
+              style={{ fontSize: 'clamp(36px, 5vw, 68px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
+            >
+              From first conversation<br />to <em className="not-italic text-brand-blue">delivered.</em>
+            </h2>
           </div>
-          <h2
-            className="font-serif font-light text-white"
-            style={{ fontSize: 'clamp(40px, 5vw, 68px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
-          >
-            From first conversation<br />to <em className="not-italic text-brand-blue">delivered.</em>
-          </h2>
+          <p className="text-white/50 mt-5 md:mt-0" style={{ fontSize: '18px', fontWeight: 300, lineHeight: 1.75, maxWidth: '480px' }}>
+            We keep it simple. Tell us what you need, we handle everything from there — no project management required on your end.
+          </p>
         </div>
-        <p className="text-white/50" style={{ fontSize: '18px', fontWeight: 300, lineHeight: 1.75, maxWidth: '480px' }}>
-          We keep it simple. Tell us what you need, we handle everything from there — no project management required on your end.
-        </p>
       </div>
 
       {/* Steps */}
-      <div className="fade-up relative z-10 grid grid-cols-3 gap-6">
+      <div className="fade-up relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         {steps.map((step, i) => (
           <div
             key={step.index}
             className="group relative flex flex-col gap-6 border border-white/10 bg-white/[0.03] transition-all duration-300 hover:bg-white/[0.07] hover:border-brand-blue/40 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(30,155,215,0.1)]"
-            style={{ padding: '48px 40px' }}
+            style={{ padding: '32px 28px' }}
           >
             {/* Ghost number */}
             <span

@@ -15,11 +15,11 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-300 ${
-        scrolled ? 'h-[88px] shadow-md border-b border-brand-border' : 'h-[108px] border-b border-brand-border'
+        scrolled ? 'h-[72px] md:h-[88px] shadow-md border-b border-brand-border' : 'h-[80px] md:h-[108px] border-b border-brand-border'
       }`}
       style={{ background: 'rgba(255,255,255,0.97)', backdropFilter: 'blur(16px)' }}
     >
-      <div className="w-full px-12 flex items-center justify-between">
+      <div className="w-full px-5 md:px-12 flex items-center justify-between">
         {/* Logo — icon + full wordmark, large */}
         <a href="#" className="flex items-center group" aria-label="Standwell home">
           <Image
@@ -27,7 +27,7 @@ export default function Header() {
             alt="StandWell"
             width={200}
             height={200}
-            className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-20' : 'h-24'}`}
+            className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-14 md:h-20' : 'h-16 md:h-24'}`}
             priority
           />
         </a>

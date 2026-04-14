@@ -58,34 +58,36 @@ export default function WhatWeCreate() {
   }, [])
 
   return (
-    <section id="services" ref={sectionRef} className="bg-white py-[120px] px-20">
+    <section id="services" ref={sectionRef} className="bg-white py-16 px-5 md:py-[120px] md:px-20">
       {/* Header */}
-      <div className="fade-up grid gap-20 items-end mb-[72px]" style={{ gridTemplateColumns: '1fr 1fr' }}>
-        <div>
-          <div className="flex items-center gap-2.5 mb-5">
-            <div className="w-6 h-px bg-brand-blue flex-shrink-0" />
-            <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-brand-blue">What We Do</span>
+      <div className="fade-up mb-10 md:mb-[72px]">
+        <div className="md:grid md:gap-20 md:items-end" style={{ gridTemplateColumns: '1fr 1fr' }}>
+          <div>
+            <div className="flex items-center gap-2.5 mb-5">
+              <div className="w-6 h-px bg-brand-blue flex-shrink-0" />
+              <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-brand-blue">What We Do</span>
+            </div>
+            <h2
+              className="font-serif font-light text-brand-black"
+              style={{ fontSize: 'clamp(36px, 5vw, 68px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
+            >
+              Everything your<br />brand <em className="not-italic text-brand-blue">needs</em> to<br />show up.
+            </h2>
           </div>
-          <h2
-            className="font-serif font-light text-brand-black"
-            style={{ fontSize: 'clamp(40px, 5vw, 68px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
-          >
-            Everything your<br />brand <em className="not-italic text-brand-blue">needs</em> to<br />show up.
-          </h2>
+          <p className="text-brand-mid mt-5 md:mt-0" style={{ fontSize: '18px', fontWeight: 300, lineHeight: 1.75, maxWidth: '480px' }}>
+            From merchandise your team actually uses to displays that make a statement — we handle sourcing, production, and delivery so you don't have to manage it.
+          </p>
         </div>
-        <p className="text-brand-mid" style={{ fontSize: '18px', fontWeight: 300, lineHeight: 1.75, maxWidth: '480px' }}>
-          From merchandise your team actually uses to displays that make a statement — we handle sourcing, production, and delivery so you don't have to manage it.
-        </p>
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {services.map((s, i) => (
           <a
             key={s.num}
             href="#contact"
             className="fade-up group relative flex flex-col gap-6 bg-brand-gray border border-brand-border no-underline overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(30,155,215,0.15)] hover:border-brand-blue/40"
-            style={{ padding: '48px 40px', transitionDelay: `${i * 60}ms` }}
+            style={{ padding: '32px 28px', transitionDelay: `${i * 60}ms` }}
           >
             {/* Blue corner accent on hover */}
             <div className="absolute top-0 right-0 w-20 h-20 transition-all duration-300 opacity-0 group-hover:opacity-100"

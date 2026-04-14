@@ -82,8 +82,8 @@ export default function QuoteForm() {
   }
 
   return (
-    <section id="contact" ref={sectionRef} className="bg-brand-blue py-[120px] px-20">
-      <div className="grid gap-20 items-center" style={{ gridTemplateColumns: '1fr 1fr' }}>
+    <section id="contact" ref={sectionRef} className="bg-brand-blue py-16 px-5 md:py-[120px] md:px-20">
+      <div className="flex flex-col md:grid md:gap-20 md:items-center" style={{ gridTemplateColumns: '1fr 1fr' }}>
 
         {/* Left */}
         <div className="fade-up">
@@ -118,7 +118,7 @@ export default function QuoteForm() {
         </div>
 
         {/* Right — Form */}
-        <div className="fade-up">
+        <div className="fade-up mt-10 md:mt-0">
           {state === 'success' ? (
             <div className="flex flex-col gap-4 p-10 border" style={{ background: 'rgba(255,255,255,0.08)', borderColor: 'rgba(255,255,255,0.15)' }}>
               <div className="w-8 h-8 bg-white/20 flex items-center justify-center">
