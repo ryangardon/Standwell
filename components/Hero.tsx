@@ -182,6 +182,7 @@ export default function Hero() {
           overflow: hidden;
           background: #fff;
           border: 1px solid rgba(10,10,10,0.06);
+          transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .hero-card-1 {
@@ -223,6 +224,23 @@ export default function Hero() {
             0 2px 4px rgba(10,10,10,0.03),
             0 0 0 1px rgba(30,155,215,0.1),
             0 0 6px 1px rgba(30,155,215,0.06);
+        }
+
+        /* Group hover: disperse cards along the same offset axis, no scale or z-index change */
+        .hero-stack:hover .hero-card-1 {
+          transform: translate(0px, 0px) scale(1);
+        }
+
+        .hero-stack:hover .hero-card-2 {
+          transform: translate(54px, 45px) scale(0.975);
+        }
+
+        .hero-stack:hover .hero-card-3 {
+          transform: translate(108px, 90px) scale(0.95);
+        }
+
+        .hero-stack:hover .hero-card-4 {
+          transform: translate(162px, 135px) scale(0.925);
         }
       `}</style>
     </section>
