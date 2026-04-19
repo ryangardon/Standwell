@@ -182,16 +182,6 @@ export default function Hero() {
           overflow: hidden;
           background: #fff;
           border: 1px solid rgba(10,10,10,0.06);
-          transition:
-            transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
-            box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1),
-            z-index 0ms;
-          will-change: transform;
-        }
-
-        /* Individual card hover lifts it above siblings */
-        .hero-card:hover {
-          z-index: 10 !important;
         }
 
         .hero-card-1 {
@@ -233,39 +223,6 @@ export default function Hero() {
             0 2px 4px rgba(10,10,10,0.03),
             0 0 0 1px rgba(30,155,215,0.1),
             0 0 6px 1px rgba(30,155,215,0.06);
-        }
-
-        .hero-stack:hover .hero-card-1 {
-          transform: translate(-24px, -12px) scale(1);
-          box-shadow:
-            0 30px 72px rgba(10,10,10,0.16),
-            0 0 0 1.5px rgba(30,155,215,0.7),
-            0 0 28px 6px rgba(30,155,215,0.4),
-            0 0 56px 16px rgba(30,155,215,0.2);
-        }
-
-        .hero-stack:hover .hero-card-2 {
-          transform: translate(60px, 50px) scale(0.965);
-          box-shadow:
-            0 16px 40px rgba(10,10,10,0.10),
-            0 0 0 1px rgba(30,155,215,0.3),
-            0 0 16px 3px rgba(30,155,215,0.15);
-        }
-
-        .hero-stack:hover .hero-card-3 {
-          transform: translate(120px, 96px) scale(0.935);
-          box-shadow:
-            0 10px 28px rgba(10,10,10,0.08),
-            0 0 0 1px rgba(30,155,215,0.2),
-            0 0 10px 2px rgba(30,155,215,0.1);
-        }
-
-        .hero-stack:hover .hero-card-4 {
-          transform: translate(178px, 140px) scale(0.905);
-          box-shadow:
-            0 8px 18px rgba(10,10,10,0.06),
-            0 0 0 1px rgba(30,155,215,0.15),
-            0 0 6px 1px rgba(30,155,215,0.08);
         }
       `}</style>
     </section>
