@@ -5,23 +5,23 @@ import { useEffect, useRef } from 'react'
 const items = [
   {
     num: '01',
-    title: 'We tell you what to order',
-    desc: "No 500,000-item catalog to wade through. We recommend the right products for your goals, timeline, and budget — and explain why.",
+    title: 'Direct pricing, no markup',
+    desc: "We work with manufacturers directly — no exhibit house overhead, no sales rep commission buried in the quote. You get quality products at honest prices.",
   },
   {
     num: '02',
-    title: 'One vendor for everything',
-    desc: 'Merchandise, displays, kits — all in one place. Stop managing multiple suppliers, timelines, and invoices for a single project.',
+    title: 'Fast turnaround',
+    desc: 'Most orders ship within 5–7 business days. We know you booked the booth last minute — we\'ve been there. Rush options available when you really need it.',
   },
   {
     num: '03',
-    title: 'Right-sized for growing teams',
-    desc: 'No agency overhead or enterprise minimums. We work with companies of 10 to 500 — and treat every order like it matters.',
+    title: 'Actually helpful humans',
+    desc: 'Real people who answer questions and help you pick the right product. No bots, no 30-minute discovery calls just to get a price. Just tell us what you need.',
   },
   {
     num: '04',
-    title: 'Real people, real replies',
-    desc: 'Every inquiry gets a response within 24 hours from a real person — not an automated quote form or a customer service queue.',
+    title: 'No minimums, no contracts',
+    desc: 'Order one banner stand or outfit five locations. We\'re built for transactional buyers who want to order and move on — not lock into a long-term relationship.',
   },
 ]
 
@@ -54,12 +54,12 @@ export default function WhyStandwell() {
           </div>
           <h2
             className="font-serif font-light text-brand-black mb-4"
-            style={{ fontSize: 'clamp(40px, 5vw, 68px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
+            style={{ fontSize: 'clamp(36px, 5vw, 68px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
           >
-            A different kind<br />of <em className="not-italic text-brand-blue">brand partner.</em>
+            We exist because the<br />display industry<br />is <em className="not-italic text-brand-blue">annoying.</em>
           </h2>
           <p className="text-brand-mid mt-4" style={{ fontSize: '18px', fontWeight: 300, lineHeight: 1.75, maxWidth: '420px' }}>
-            Most vendors send you a catalog. We tell you what to order, make sure it's right, and get it there on time.
+            Long lead times. Confusing quotes. Salespeople who won't give you a price without a 30-minute call. We cut all of that out.
           </p>
 
           <a
@@ -87,10 +87,10 @@ export default function WhyStandwell() {
                 {item.num}
               </span>
               <div>
-                <div className="font-serif text-[26px] font-medium text-brand-black mb-2.5 leading-[1.2] transition-colors duration-200 group-hover:text-brand-blue">
+                <div className="font-serif text-[24px] font-medium text-brand-black mb-2.5 leading-[1.2] transition-colors duration-200 group-hover:text-brand-blue">
                   {item.title}
                 </div>
-                <p className="text-brand-mid" style={{ fontSize: '16px', fontWeight: 300, lineHeight: 1.75 }}>
+                <p className="text-brand-mid" style={{ fontSize: '15px', fontWeight: 300, lineHeight: 1.75 }}>
                   {item.desc}
                 </p>
               </div>

@@ -35,7 +35,7 @@ export default function Header() {
         {/* Nav */}
         <ul className="hidden md:flex items-center gap-10 list-none m-0 p-0">
           {[
-            { label: 'What We Do', href: '#services' },
+            { label: 'Products', href: '#products' },
             { label: 'How It Works', href: '#process' },
             { label: 'Why Standwell', href: '#why' },
           ].map((link) => (

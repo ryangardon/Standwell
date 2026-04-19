@@ -40,23 +40,23 @@ export default function QuoteForm() {
           <div className="flex items-center gap-2.5 mb-5">
             <div className="w-6 h-px flex-shrink-0" style={{ background: 'rgba(255,255,255,0.3)' }} />
             <span className="text-[11px] font-medium tracking-[0.14em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
-              Get Started
+              Get a Quote
             </span>
           </div>
           <h2
             className="font-serif font-light text-white mb-5"
-            style={{ fontSize: 'clamp(40px, 5vw, 68px)', lineHeight: 1.05 }}
+            style={{ fontSize: 'clamp(36px, 5vw, 68px)', lineHeight: 1.05 }}
           >
-            Let's talk about<br />your <em className="not-italic" style={{ opacity: 0.7 }}>next project.</em>
+            Get a quote<br />in <em className="not-italic" style={{ opacity: 0.7 }}>24 hours.</em>
           </h2>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'rgba(255,255,255,0.6)', lineHeight: 1.75 }}>
-            Tell us what you're working on. We'll get back to you within 24 hours with a recommendation — no commitment required.
+            Tell us what you need. We'll get back to you with pricing, product recommendations, and next steps — no sales pressure, no confusing configurators.
           </p>
 
           <div className="mt-10 flex flex-col gap-3">
             {[
               'Response within 24 hours',
-              'Typical delivery in 2–4 weeks',
+              'Ships in 5–7 business days',
               'No commitment to inquire',
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
@@ -83,19 +83,11 @@ export default function QuoteForm() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-4" noValidate>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="flex flex-col gap-2">
-                  <label className="text-[11px] font-medium tracking-[0.1em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                    First Name
-                  </label>
-                  <input name="firstName" type="text" placeholder="Alex" required className={inputClass} style={inputStyle} />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="text-[11px] font-medium tracking-[0.1em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                    Last Name
-                  </label>
-                  <input name="lastName" type="text" placeholder="Rivera" required className={inputClass} style={inputStyle} />
-                </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-[11px] font-medium tracking-[0.1em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  Your Name
+                </label>
+                <input name="name" type="text" placeholder="Alex Rivera" required className={inputClass} style={inputStyle} />
               </div>
 
               <div className="flex flex-col gap-2">
@@ -103,6 +95,7 @@ export default function QuoteForm() {
                   Work Email
                 </label>
                 <input name="email" type="email" placeholder="alex@company.com" required className={inputClass} style={inputStyle} />
+                <ValidationError field="email" errors={state.errors} className="text-white/70 text-xs mt-1" />
               </div>
 
               <div className="flex flex-col gap-2">
@@ -122,23 +115,25 @@ export default function QuoteForm() {
                   className={inputClass}
                   style={{ ...inputStyle, backgroundImage: `url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6L8 10L12 6' stroke='rgba(255,255,255,0.5)' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 16px center' }}
                 >
-                  <option value="" disabled>Select a category</option>
-                  <option value="Branded Merchandise" style={{ background: '#1E9BD7' }}>Branded Merchandise</option>
-                  <option value="Displays & Signage" style={{ background: '#1E9BD7' }}>Displays &amp; Signage</option>
-                  <option value="Branded Kits" style={{ background: '#1E9BD7' }}>Branded Kits</option>
-                  <option value="All of the above" style={{ background: '#1E9BD7' }}>All of the above</option>
-                  <option value="Not sure yet" style={{ background: '#1E9BD7' }}>Not sure yet</option>
+                  <option value="" disabled>Select a product</option>
+                  <option value="Banner Stand" style={{ background: '#1E9BD7' }}>Banner Stand</option>
+                  <option value="Pop-Up Backdrop" style={{ background: '#1E9BD7' }}>Pop-Up Backdrop</option>
+                  <option value="Tension Fabric Display" style={{ background: '#1E9BD7' }}>Tension Fabric Display</option>
+                  <option value="Table Throw" style={{ background: '#1E9BD7' }}>Table Throw</option>
+                  <option value="Complete Booth Kit" style={{ background: '#1E9BD7' }}>Complete Booth Kit</option>
+                  <option value="Multiple products" style={{ background: '#1E9BD7' }}>Multiple products</option>
+                  <option value="Not sure — help me choose" style={{ background: '#1E9BD7' }}>Not sure — help me choose</option>
                 </select>
               </div>
 
               <div className="flex flex-col gap-2">
                 <label className="text-[11px] font-medium tracking-[0.1em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                  Tell us more
+                  Tell us about your event
                 </label>
                 <textarea
                   name="details"
                   rows={4}
-                  placeholder="What are you working on? Any timeline or budget in mind?"
+                  placeholder="Space size, event date, budget — anything helpful."
                   className={inputClass + ' resize-none'}
                   style={inputStyle}
                 />
@@ -160,14 +155,14 @@ export default function QuoteForm() {
                     Sending...
                   </>
                 ) : (
-                  'Send Inquiry'
+                  'Get Your Quote'
                 )}
               </button>
 
               <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)' }}>
-                Or email us directly at{' '}
-                <a href="mailto:sales@standwelldisplays.com" style={{ color: 'rgba(255,255,255,0.5)' }} className="hover:text-white transition-colors">
-                  sales@standwelldisplays.com
+                No spam. No sales calls unless you want one. Just a fast, honest quote.{' '}
+                <a href="mailto:hello@standwelldisplays.com" style={{ color: 'rgba(255,255,255,0.5)' }} className="hover:text-white transition-colors">
+                  hello@standwelldisplays.com
                 </a>
               </p>
             </form>

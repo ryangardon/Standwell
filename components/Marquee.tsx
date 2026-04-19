@@ -1,12 +1,14 @@
 const items = [
-  'Branded Merchandise',
-  'Displays & Signage',
-  'Custom Apparel',
-  'Company Kits',
-  'Promotional Products',
-  'Branded Environments',
-  'Drinkware & Bags',
-  'Custom Products',
+  'Banner Stands',
+  'Pop-Up Backdrops',
+  'Tension Fabric Displays',
+  'Table Throws',
+  'Booth Kits',
+  'Ships in 5–7 Days',
+  'No Minimums',
+  'Real Humans, Real Answers',
+  'Direct Pricing',
+  'No Exhibit House Markup',
 ]
 
 export default function Marquee() {

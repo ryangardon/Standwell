@@ -67,19 +67,19 @@ export default function Hero() {
           <div className="flex items-center gap-3 mb-6 md:mb-10">
             <div className="w-6 md:w-8 h-px bg-brand-blue flex-shrink-0" />
             <span className="text-xs md:text-sm font-semibold tracking-[0.14em] uppercase text-brand-blue">
-              Branded Products &amp; Merchandise
+              Brand Presentation
             </span>
           </div>
 
           <h1
             className="font-serif font-light text-brand-black mb-6 md:mb-8"
-            style={{ fontSize: 'clamp(40px, 7vw, 88px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
+            style={{ fontSize: 'clamp(36px, 6.5vw, 84px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
           >
-            Branded products<br />for <em className="not-italic text-brand-blue">growing</em><br />companies.
+            Professional displays.<br />Simple process.<br /><em className="not-italic text-brand-blue">No BS.</em>
           </h1>
 
           <p className="text-brand-mid mb-10 md:mb-14 max-w-lg" style={{ fontSize: 'clamp(16px, 2vw, 20px)', fontWeight: 300, lineHeight: 1.75 }}>
-            One partner for everything your team and brand needs — merchandise, displays, and custom products. Sourced, coordinated, and delivered.
+            Banner stands, backdrops, and booth kits for teams that need to look sharp — without the 6-week lead times or mystery pricing.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
@@ -92,8 +92,8 @@ export default function Hero() {
                 <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-            <a href="#services" className="text-brand-mid text-base hover:text-brand-blue transition-colors duration-200 flex items-center gap-2 group">
-              See what we do
+            <a href="#products" className="text-brand-mid text-base hover:text-brand-blue transition-colors duration-200 flex items-center gap-2 group">
+              Browse products
               <span className="transition-transform duration-200 group-hover:translate-x-1.5">→</span>
             </a>
           </div>
@@ -126,7 +126,7 @@ export default function Hero() {
                 <Image src="/hero.png" alt="" fill className="object-cover object-center" sizes="480px" />
               </div>
               <div className="hero-card hero-card-1">
-                <Image src="/hero0.png" alt="Standwell branded kit" fill className="object-cover object-center" priority sizes="480px" />
+                <Image src="/hero0.png" alt="Standwell branded display" fill className="object-cover object-center" priority sizes="480px" />
               </div>
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function Hero() {
               boxShadow: '0 20px 60px rgba(10,10,10,0.12), 0 0 0 1.5px rgba(30,155,215,0.4), 0 0 24px 6px rgba(30,155,215,0.2)',
             }}
           >
-            <Image src="/hero0.png" alt="Standwell branded kit" fill className="object-cover object-center" priority sizes="100vw" />
+            <Image src="/hero0.png" alt="Standwell branded display" fill className="object-cover object-center" priority sizes="100vw" />
           </div>
         </div>
       </div>

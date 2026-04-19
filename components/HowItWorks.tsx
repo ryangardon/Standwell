@@ -6,17 +6,17 @@ const steps = [
   {
     index: '01',
     title: 'Tell us what you need',
-    desc: "Fill out the quote form with your goals, timeline, and budget. We'll get back to you within 24 hours with a recommendation or follow-up questions.",
+    desc: "Fill out the form or shoot us an email. Share your event date, space size, and any brand assets you have. We'll get back to you within 24 hours.",
   },
   {
     index: '02',
-    title: 'We handle the details',
-    desc: 'We source the right products, coordinate production and artwork, and keep you updated at each stage. No vendor chasing, no guesswork.',
+    title: 'We recommend the right setup',
+    desc: 'No confusing configurator. We tell you exactly what products fit your space and budget — and why. You approve the quote and graphics before anything goes to production.',
   },
   {
     index: '03',
-    title: 'It arrives ready to go',
-    desc: 'Everything ships directly to you or your team — inspected and ready to use. Typical delivery in 2–4 weeks from order confirmation.',
+    title: 'It shows up ready to go',
+    desc: "Your displays ship direct to you or your venue. Unbox, set up in minutes, and look like you've been doing this for years. Rush options available when you need it.",
   },
 ]
 
@@ -64,7 +64,7 @@ export default function HowItWorks() {
               className="font-serif font-light text-white"
               style={{ fontSize: 'clamp(36px, 5vw, 68px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
             >
-              From first conversation<br />to <em className="not-italic text-brand-blue">delivered.</em>
+              From quote to delivery<br />in <em className="not-italic text-brand-blue">3 steps.</em>
             </h2>
           </div>
           <p className="text-white/50 mt-5 md:mt-0" style={{ fontSize: '18px', fontWeight: 300, lineHeight: 1.75, maxWidth: '480px' }}>
@@ -98,10 +98,10 @@ export default function HowItWorks() {
               {step.index}
             </div>
 
-            <div className="font-serif text-[28px] font-medium text-white leading-[1.2] transition-colors duration-300 group-hover:text-brand-blue">
+            <div className="font-serif text-[26px] font-medium text-white leading-[1.2] transition-colors duration-300 group-hover:text-brand-blue">
               {step.title}
             </div>
-            <p style={{ fontSize: '16px', fontWeight: 300, color: 'rgba(255,255,255,0.5)', lineHeight: 1.75 }}>
+            <p style={{ fontSize: '15px', fontWeight: 300, color: 'rgba(255,255,255,0.5)', lineHeight: 1.75 }}>
               {step.desc}
             </p>
           </div>

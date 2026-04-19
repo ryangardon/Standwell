@@ -3,10 +3,10 @@
 import { useEffect, useRef } from 'react'
 
 const stats = [
-  { num: '24h', label: 'Response on every inquiry' },
-  { num: '2–4wk', label: 'Typical delivery from order' },
-  { num: '1', label: 'Point of contact for everything' },
-  { num: '0', label: 'Commitment to inquire' },
+  { num: '5–7', label: 'Day standard shipping' },
+  { num: '24h', label: 'Response on every quote' },
+  { num: '0', label: 'Minimums or contracts' },
+  { num: '100%', label: 'Satisfaction guaranteed' },
 ]
 
 export default function TrustSection() {
@@ -33,7 +33,7 @@ export default function TrustSection() {
         What you can expect
       </p>
       <div className="fade-up grid grid-cols-2 md:grid-cols-4 gap-px bg-brand-border border border-brand-border">
-        {stats.map((stat, i) => (
+        {stats.map((stat) => (
           <div
             key={stat.label}
             className="group relative bg-white px-4 py-10 md:px-8 md:py-12 text-center overflow-hidden transition-all duration-300 hover:bg-brand-blue cursor-default"
@@ -43,11 +43,11 @@ export default function TrustSection() {
 
             <div
               className="relative z-10 font-serif text-brand-blue mb-3 transition-colors duration-300 group-hover:text-white"
-              style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 300, lineHeight: 1 }}
+              style={{ fontSize: 'clamp(32px, 4vw, 56px)', fontWeight: 300, lineHeight: 1 }}
             >
               {stat.num}
             </div>
-            <div className="relative z-10 text-brand-mid transition-colors duration-300 group-hover:text-white/80" style={{ fontSize: '15px', fontWeight: 300, lineHeight: 1.5 }}>
+            <div className="relative z-10 text-brand-mid transition-colors duration-300 group-hover:text-white/80" style={{ fontSize: '14px', fontWeight: 300, lineHeight: 1.5 }}>
               {stat.label}
             </div>
           </div>
