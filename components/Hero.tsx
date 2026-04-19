@@ -18,7 +18,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="min-h-screen pt-[80px] md:pt-[108px] bg-[#F9FAFB] flex items-center overflow-hidden relative">
+    <section className="h-screen bg-[#F9FAFB] flex items-center overflow-hidden relative" style={{ paddingTop: 'clamp(80px, 10vh, 108px)' }}>
 
       {/* Dot grid */}
       <div
@@ -60,11 +60,11 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 w-full grid items-center px-5 py-16 gap-12 md:px-12 md:py-20 lg:px-20 lg:py-24 hero-grid">
+      <div className="relative z-10 w-full grid items-center px-5 py-6 gap-8 md:px-12 md:py-8 lg:px-20 lg:py-10 hero-grid">
 
         {/* LEFT — copy */}
         <div>
-          <div className="flex items-center gap-3 mb-6 md:mb-10">
+          <div className="flex items-center gap-3 mb-4 md:mb-6">
             <div className="w-6 md:w-8 h-px bg-brand-blue flex-shrink-0" />
             <span className="text-xs md:text-sm font-semibold tracking-[0.14em] uppercase text-brand-blue">
               Brand Presentation
@@ -72,13 +72,13 @@ export default function Hero() {
           </div>
 
           <h1
-            className="font-serif font-light text-brand-black mb-6 md:mb-8"
+            className="font-serif font-light text-brand-black mb-4 md:mb-5"
             style={{ fontSize: 'clamp(36px, 6.5vw, 84px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
           >
             Show Up and<br /><em className="not-italic text-brand-blue">Stand Out.</em>
           </h1>
 
-          <p className="text-brand-mid mb-10 md:mb-14 max-w-lg" style={{ fontSize: 'clamp(16px, 2vw, 20px)', fontWeight: 300, lineHeight: 1.75 }}>
+          <p className="text-brand-mid mb-8 md:mb-10 max-w-lg" style={{ fontSize: 'clamp(16px, 2vw, 20px)', fontWeight: 300, lineHeight: 1.75 }}>
             Professional displays, backdrops, and event kits — designed to make your brand impossible to ignore.
           </p>
 
