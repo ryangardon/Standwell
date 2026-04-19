@@ -75,11 +75,11 @@ export default function Hero() {
             className="font-serif font-light text-brand-black mb-6 md:mb-8"
             style={{ fontSize: 'clamp(36px, 6.5vw, 84px)', lineHeight: 1.05, letterSpacing: '-0.01em' }}
           >
-            Professional displays.<br />Simple process.<br /><em className="not-italic text-brand-blue">No BS.</em>
+            Show Up and<br /><em className="not-italic text-brand-blue">Stand Out.</em>
           </h1>
 
           <p className="text-brand-mid mb-10 md:mb-14 max-w-lg" style={{ fontSize: 'clamp(16px, 2vw, 20px)', fontWeight: 300, lineHeight: 1.75 }}>
-            Banner stands, backdrops, and booth kits for teams that need to look sharp — without the 6-week lead times or mystery pricing.
+            Professional displays, backdrops, and event kits — designed to make your brand impossible to ignore.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
@@ -91,10 +91,6 @@ export default function Hero() {
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
                 <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </a>
-            <a href="#products" className="text-brand-mid text-base hover:text-brand-blue transition-colors duration-200 flex items-center gap-2 group">
-              Browse products
-              <span className="transition-transform duration-200 group-hover:translate-x-1.5">→</span>
             </a>
           </div>
         </div>
