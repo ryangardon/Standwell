@@ -110,7 +110,7 @@ export default function Hero() {
             aria-hidden="true"
           />
 
-          <div style={{ padding: '40px 140px 120px 20px' }}>
+          <div style={{ padding: '24px 100px 80px 16px' }}>
             <div className="hero-stack">
               <div className="hero-card hero-card-4">
                 <Image src="/hero3.png" alt="" fill className="object-cover object-center" sizes="480px" />
@@ -156,110 +156,116 @@ export default function Hero() {
 
         .hero-stack {
           position: relative;
-          width: 340px;
-          height: 420px;
+          width: 260px;
+          height: 320px;
           overflow: visible;
         }
 
         @media (min-width: 1024px) {
           .hero-stack {
-            width: 420px;
-            height: 520px;
+            width: 320px;
+            height: 395px;
           }
         }
 
         @media (min-width: 1280px) {
           .hero-stack {
-            width: 480px;
-            height: 600px;
+            width: 360px;
+            height: 445px;
           }
         }
 
         .hero-card {
           position: absolute;
           inset: 0;
-          border-radius: 32px;
+          border-radius: 24px;
           overflow: hidden;
           background: #fff;
           border: 1px solid rgba(10,10,10,0.06);
           transition:
             transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
-            box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1),
+            z-index 0ms;
           will-change: transform;
+        }
+
+        /* Individual card hover lifts it above siblings */
+        .hero-card:hover {
+          z-index: 10 !important;
         }
 
         .hero-card-1 {
           z-index: 4;
           transform: translate(0px, 0px) scale(1);
           box-shadow:
-            0 28px 70px rgba(10,10,10,0.12),
-            0 10px 24px rgba(10,10,10,0.08),
+            0 20px 50px rgba(10,10,10,0.12),
+            0 8px 18px rgba(10,10,10,0.08),
             0 0 0 1.5px rgba(30,155,215,0.5),
-            0 0 24px 4px rgba(30,155,215,0.3),
-            0 0 56px 12px rgba(30,155,215,0.15);
+            0 0 20px 4px rgba(30,155,215,0.3),
+            0 0 44px 10px rgba(30,155,215,0.15);
         }
 
         .hero-card-2 {
           z-index: 3;
-          transform: translate(48px, 40px) scale(0.975);
+          transform: translate(36px, 30px) scale(0.975);
           box-shadow:
-            0 18px 44px rgba(10,10,10,0.09),
-            0 5px 14px rgba(10,10,10,0.05),
+            0 14px 34px rgba(10,10,10,0.09),
+            0 4px 10px rgba(10,10,10,0.05),
             0 0 0 1px rgba(30,155,215,0.25),
-            0 0 16px 3px rgba(30,155,215,0.12);
+            0 0 12px 2px rgba(30,155,215,0.12);
         }
 
         .hero-card-3 {
           z-index: 2;
-          transform: translate(96px, 80px) scale(0.95);
+          transform: translate(72px, 60px) scale(0.95);
           box-shadow:
-            0 12px 30px rgba(10,10,10,0.07),
-            0 3px 8px rgba(10,10,10,0.04),
+            0 10px 24px rgba(10,10,10,0.07),
+            0 2px 6px rgba(10,10,10,0.04),
             0 0 0 1px rgba(30,155,215,0.15),
-            0 0 10px 2px rgba(30,155,215,0.08);
+            0 0 8px 2px rgba(30,155,215,0.08);
         }
 
         .hero-card-4 {
           z-index: 1;
-          transform: translate(144px, 120px) scale(0.925);
+          transform: translate(108px, 90px) scale(0.925);
           box-shadow:
-            0 8px 20px rgba(10,10,10,0.06),
-            0 2px 6px rgba(10,10,10,0.03),
+            0 6px 16px rgba(10,10,10,0.06),
+            0 2px 4px rgba(10,10,10,0.03),
             0 0 0 1px rgba(30,155,215,0.1),
-            0 0 8px 1px rgba(30,155,215,0.06);
+            0 0 6px 1px rgba(30,155,215,0.06);
         }
 
         .hero-stack:hover .hero-card-1 {
-          transform: translate(-36px, -16px) scale(1);
+          transform: translate(-24px, -12px) scale(1);
           box-shadow:
-            0 40px 96px rgba(10,10,10,0.16),
+            0 30px 72px rgba(10,10,10,0.16),
             0 0 0 1.5px rgba(30,155,215,0.7),
-            0 0 32px 8px rgba(30,155,215,0.4),
-            0 0 72px 20px rgba(30,155,215,0.2);
+            0 0 28px 6px rgba(30,155,215,0.4),
+            0 0 56px 16px rgba(30,155,215,0.2);
         }
 
         .hero-stack:hover .hero-card-2 {
-          transform: translate(110px, 88px) scale(0.975);
+          transform: translate(60px, 50px) scale(0.965);
           box-shadow:
-            0 22px 52px rgba(10,10,10,0.10),
+            0 16px 40px rgba(10,10,10,0.10),
             0 0 0 1px rgba(30,155,215,0.3),
-            0 0 20px 4px rgba(30,155,215,0.15);
+            0 0 16px 3px rgba(30,155,215,0.15);
         }
 
         .hero-stack:hover .hero-card-3 {
-          transform: translate(110px, 88px) scale(0.95);
+          transform: translate(120px, 96px) scale(0.935);
           box-shadow:
-            0 14px 36px rgba(10,10,10,0.08),
+            0 10px 28px rgba(10,10,10,0.08),
             0 0 0 1px rgba(30,155,215,0.2),
-            0 0 12px 2px rgba(30,155,215,0.1);
+            0 0 10px 2px rgba(30,155,215,0.1);
         }
 
         .hero-stack:hover .hero-card-4 {
-          transform: translate(210px, 164px) scale(0.925);
+          transform: translate(178px, 140px) scale(0.905);
           box-shadow:
-            0 10px 24px rgba(10,10,10,0.06),
+            0 8px 18px rgba(10,10,10,0.06),
             0 0 0 1px rgba(30,155,215,0.15),
-            0 0 8px 2px rgba(30,155,215,0.08);
+            0 0 6px 1px rgba(30,155,215,0.08);
         }
       `}</style>
     </section>
